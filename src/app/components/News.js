@@ -222,7 +222,7 @@ const TestimonialCarousel = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="h-full"
                 >
-                  <div className="h-full bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2">
+                  <div className="h-full bg-white rounded-2xl  transition-all duration-500 hover:-translate-y-2">
                     <div className="p-4 sm:p-5 md:p-6 lg:p-7 relative">
                       <Quote className="absolute top-4 right-4 w-6 h-6 sm:w-8 sm:h-8 text-emerald-200 opacity-50" />
 

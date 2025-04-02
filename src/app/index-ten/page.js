@@ -1,77 +1,144 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
 
-import Navbar from '../components/Navbar'
-import HeroTen from '../components/hero-ten'
-import About from '../components/about'
-import Popularjobstwo from '../components/Popular-Jobs-two';
-
-import Cta from '../components/cta';
-
-import Counter from '../components/counter'
-import BestCompanies from '../components/Best-companies';
-
-import News from '../components/News'
-
-import { categoriesData } from '../components/Data'
-import Footer from '../components/Footer'
-import Switcher from '../components/Switcher'
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Switcher from "../components/Switcher";
+import Categories from "../components/Categories";
+import MillionsJob from "../components/Millions-job";
+import Jobs from "../components/Jobs";
+import BestCompanies from "../components/Best-companies";
+import Feature from "../components/Feature";
+import News from "../components/News";
+import ExploreJob from "../components/Explore-job";
+import Form from "../components/form";
 
 export default function IndexTen() {
   return (
     <>
-    <Navbar navClass="justify-start" topnavClass="bg-white dark:bg-slate-900" />
+      <Navbar navClass="justify-end" />
+      <section className="relative md:py-56 py-36 w-full">
+        <div className="absolute inset-0 bg-emerald-600/5 dark:bg-emerald-600/20"></div>
+        <div className="container z-1">
+          <div className="grid grid-cols-1 text-center mt-10 relative">
+            <h4 className="lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 font-bold">
+              Join us &{" "}
+              <span className="text-emerald-600 font-bold">Explore</span> <br />{" "}
+              <span className="text-emerald-600 font-bold">Thousands</span> of
+              Jobs
+            </h4>
+            <p className="text-slate-400 text-lg max-w-xl mx-auto">
+              Find Jobs, Employment & Career Opportunities. Some of the
+              companies we ve helped recruit excellent applicants over the
+              years.
+            </p>
 
-    <HeroTen/>
+            <div className="d-flex" id="reserve-form">
+              <div className="md:w-5/6 mx-auto">
+                <div className="lg:col-span-10 mt-8">
+                  <div className="bg-white dark:bg-slate-900 border-0 shadow rounded-md p-3">
+                    <Form />
+                  </div>
+                </div>
+              </div>
 
-    <section className="relative md:py-24 py-16">
-        <div className="container">
-            <div className="grid grid-cols-1 pb-8 text-center">
-                <h3 className="mb-4 md:text-[26px] md:leading-normal text-2xl leading-normal font-semibold">Popular Categories</h3>
+              <div className="mt-4">
+                <span className="text-slate-400">
+                  <span className="text-dark">Popular Searches :</span>{" "}
+                  Designer, Developer, Web, IOS, PHP Senior Engineer
+                </span>
+              </div>
 
-                <p className="text-slate-400 max-w-xl mx-auto">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+              <div className="absolute -top-20 start-1/2 -translate-x-1/2">
+                <div className="size-10 animate-[bounce_2s_infinite] bg-white dark:bg-slate-900 flex items-center justify-center shadow dark:shadow-gray-700 rounded-md">
+                  <Image
+                    src="/images/company/facebook-logo.png"
+                    className="size-6"
+                    alt=""
+                    width={40}
+                    height={40}
+                  />
+                </div>
+              </div>
+
+              <div className="absolute top-[20%] start-10">
+                <div className="size-10 animate-[spin_5s_linear_infinite] bg-white dark:bg-slate-900 flex items-center justify-center shadow dark:shadow-gray-700 rounded-md">
+                  <Image
+                    src="/images/company/google-logo.png"
+                    className="size-6"
+                    alt=""
+                    width={40}
+                    height={40}
+                  />
+                </div>
+              </div>
+
+              <div className="absolute top-[20%] end-1">
+                <div className="size-10 bg-white dark:bg-slate-900 flex items-center justify-center shadow dark:shadow-gray-700 rounded-md">
+                  <Image
+                    src="/images/company/android.png"
+                    className="size-6"
+                    alt=""
+                    width={40}
+                    height={40}
+                  />
+                </div>
+              </div>
+
+              <div className="absolute top-3/4 start-1">
+                <div className="size-10 bg-white dark:bg-slate-900 flex items-center justify-center shadow dark:shadow-gray-700 rounded-md">
+                  <Image
+                    src="/images/company/lenovo-logo.png"
+                    className="size-6"
+                    alt=""
+                    width={40}
+                    height={40}
+                  />
+                </div>
+              </div>
+
+              <div className="absolute top-3/4 end-10">
+                <div className="size-10 animate-[spin_5s_linear_infinite] bg-white dark:bg-slate-900 flex items-center justify-center shadow dark:shadow-gray-700 rounded-md">
+                  <Image
+                    src="/images/company/skype.png"
+                    className="size-6"
+                    alt=""
+                    width={40}
+                    height={40}
+                  />
+                </div>
+              </div>
+
+              <div className="absolute -bottom-32 start-1/2 -translate-x-1/2">
+                <div className="size-10 animate-pulse bg-white dark:bg-slate-900 flex items-center justify-center shadow dark:shadow-gray-700 rounded-md">
+                  <Image
+                    src="/images/company/snapchat.png"
+                    className="size-6"
+                    alt=""
+                    width={40}
+                    height={40}
+                  />
+                </div>
+              </div>
             </div>
-
-            <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 mt-8 gap-4">
-                {categoriesData.map((item,index)=>{
-                    return(
-                        <div className="group relative overflow-hidden rounded-md shadow dark:shadow-gray-700 transition duration-500" key={index}>
-                            <Image src={item.image} width={0} height={0} sizes='100vw' style={{width:'100%', height:'auto'}} alt=""/>
-                            <div className="absolute inset-0 bg-slate-900/50"></div>
-
-                            <div className="absolute bottom-0 p-4">
-                                <Link href="" className="text-lg font-semibold text-white hover:text-emerald-600 transition-all duration-500">{item.title}</Link>
-                            </div>
-                        </div>
-                    )
-                })}
-            </div>
+          </div>
         </div>
-
+      </section>
+      <section className="relative md:py-24 py-16">
+        <Categories />
         <div className="container md:mt-24 md:pb-16 mt-16">
-            <About/>
+          <MillionsJob />
         </div>
-    </section>
-
-    <section className="relative bg-slate-50 dark:bg-slate-800 ">
-     <Popularjobstwo />
-    </section>
-    <div className="container md:mt-24 mt-16">
-                        <div className="grid grid-cols-1">
-                            <Cta/>
-                        </div>
-                    </div>
-
-    <section className="relative md:py-24 py-16">
-        <div className="container md:pb-24 pb-16">
-            <Counter/>
-        </div>
+      </section>
+      <Jobs />
+      <section className="relative md:pb-24 pb-16 overflow-hidden">
         <BestCompanies />
-        <News/>
-    </section>
-    <Footer/>
-    <Switcher/>
+        <Feature />
+        <News />
+        <ExploreJob />
+      </section>
+      <Footer />
+      <Switcher />
     </>
-  )
+  );
 }

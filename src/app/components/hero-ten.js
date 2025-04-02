@@ -28,7 +28,7 @@ export default function HeroTen() {
     }
   return (
         <section className="relative mt-20">
-            <div className="container-fluid relative xl:px-24">
+            <div className="container-fluid relative xl:px-8">
                 <div className="grid grid-cols-1 relative">
                     <div className="tiny-one-item">
                         <TinySlider settings={settings}>

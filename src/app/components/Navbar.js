@@ -16,7 +16,6 @@ export default function Navbar(props) {
 
     let current = usePathname();
     
-    // Define handleClickOutside outside useEffect to fix the cleanup reference issue
     const handleClickOutside = (event) => {
         if (isLangOpen && !event.target.closest('.lang-dropdown')) {
             setLangOpen(false);
@@ -29,8 +28,6 @@ export default function Navbar(props) {
 
         if (typeof window !== "undefined") {
             window.addEventListener("scroll", windowScroll);
-            
-            // Add click outside listener
             document.addEventListener('mousedown', handleClickOutside);
         }
         
@@ -46,8 +43,6 @@ export default function Navbar(props) {
 
     function windowScroll() {
         setTopNavBar(window.scrollY >= 50)
-        
-        // Close language dropdown on scroll
         if (isLangOpen) {
             setLangOpen(false);
         }
@@ -80,7 +75,6 @@ export default function Navbar(props) {
         setLangOpen(false);
     };
 
-    // Language options with their flag images
     const languages = [
         {
             code: 'english',
@@ -99,7 +93,6 @@ export default function Navbar(props) {
         }
     ];
 
-    // Get the current language details
     const currentLang = languages.find(lang => lang.code === language) || languages[0];
 
     return (
@@ -137,11 +130,7 @@ export default function Navbar(props) {
                         </Link>
                     </div>
                 </div>
-                {/* <!-- End Mobile Toggle --> */}
 
-                {/* <!-- Language Dropdown - Positioned to the far right --> */}
-
-                {/* <!-- Language Dropdown - Now positioned as an absolute element on the right --> */}
                 <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40">
                     <div className="relative lang-dropdown">
                         <button onClick={toggleLangDropdown} className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-all duration-300 focus:outline-none">
@@ -183,20 +172,8 @@ export default function Navbar(props) {
                 
                 <div id="navigation" className={`${isOpen === true ? 'hidden' : 'block'}`}>
                     <ul className={`navigation-menu ${navClass}`}>
-                        <li className={`has-submenu parent-menu-item ${["/", "/index-two", "/index-three", "/index-four","/index-five", "/index-six", "/index-seven","/index-eight","/index-nine","/index-ten","/index-item"].includes(manu) ? 'active' : ''}`}>
-                            <Link href="#" onClick={(e)=>{setSubManu(subManu === "/index-item" ? "" : "/index-item")}}>Home</Link><span className="menu-arrow"></span>
-                            <ul className={`submenu ${["/", "/index-two", "/index-three", "/index-four","/index-five", "/index-six", "/index-seven","/index-eight","/index-nine","/index-ten","/index-item"].includes(subManu) ? 'open' : ''}`}>
-                                <li className={manu ===  "/" ? 'active' : '' }><Link href="/" className="sub-menu-item">Hero One</Link></li>
-                                <li className={manu ===  "/index-two" ? 'active' : '' }><Link href="/index-two" className="sub-menu-item">Hero Two</Link></li>
-                                <li className={manu ===  "/index-three" ? 'active' : '' }><Link href="/index-three" className="sub-menu-item">Hero Three</Link></li>
-                                <li className={manu ===  "/index-four" ? 'active' : '' }><Link href="/index-four" className="sub-menu-item">Hero Four</Link></li>
-                                <li className={manu ===  "/index-five" ? 'active' : '' }><Link href="/index-five" className="sub-menu-item">Hero Five</Link></li>
-                                <li className={manu ===  "/index-six" ? 'active' : '' }><Link href="/index-six" className="sub-menu-item">Hero Six </Link></li>
-                                <li className={manu ===  "/index-seven" ? 'active' : '' }><Link href="/index-seven" className="sub-menu-item">Hero Seven </Link></li>
-                                <li className={manu ===  "/index-eight" ? 'active' : '' }><Link href="/index-eight" className="sub-menu-item">Hero Eight </Link></li>
-                                <li className={manu ===  "/index-nine" ? 'active' : '' }><Link href="/index-nine" className="sub-menu-item">Hero Nine </Link></li>
-                                <li className={manu ===  "/index-ten" ? 'active' : '' }><Link href="/index-ten" className="sub-menu-item">Hero Ten </Link></li>
-                            </ul>
+                        <li className={manu === "/index-ten" ? 'active' : ''}>
+                            <Link href="/index-ten">Home</Link>
                         </li>
 
                         <li className={`has-submenu parent-parent-menu-item ${["/job-categories","/job-grid-one", "/job-grid-two", "/job-grid-three", "/job-grid-four","/grid-item","/job-list-one", "/job-list-two", "/job-list-three", "/job-list-four","/job-list-five","/job-list-six","/list-item","/job-detail-one", "/job-detail-two", "/job-detail-three", "/detail-item","/job-apply","/job-post","/career"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/job-item" ? "" : "/job-item")}}> Jobs </Link><span className="menu-arrow"></span>  
