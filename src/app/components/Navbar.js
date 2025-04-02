@@ -172,8 +172,8 @@ export default function Navbar(props) {
                 
                 <div id="navigation" className={`${isOpen === true ? 'hidden' : 'block'}`}>
                     <ul className={`navigation-menu ${navClass}`}>
-                        <li className={manu === "/index-ten" ? 'active' : ''}>
-                            <Link href="/index-ten">Home</Link>
+                        <li className={manu === "/" ? 'active' : ''}>
+                            <Link href="/">Home</Link>
                         </li>
 
                         <li className={`has-submenu parent-parent-menu-item ${["/job-categories","/job-grid-one", "/job-grid-two", "/job-grid-three", "/job-grid-four","/grid-item","/job-list-one", "/job-list-two", "/job-list-three", "/job-list-four","/job-list-five","/job-list-six","/list-item","/job-detail-one", "/job-detail-two", "/job-detail-three", "/detail-item","/job-apply","/job-post","/career"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/job-item" ? "" : "/job-item")}}> Jobs </Link><span className="menu-arrow"></span>  
