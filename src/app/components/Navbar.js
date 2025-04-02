@@ -1,0 +1,319 @@
+'use client'
+import React, { useState, useEffect } from 'react'
+import { usePathname } from "next/navigation";
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function Navbar(props) {
+    const { navClass, topnavClass, isContainerFluid } = props;
+    const [isOpen, setMenu] = useState(true);
+    const [topNavbar, setTopNavBar] = useState(false);
+    const [isLangOpen, setLangOpen] = useState(false);
+
+    let [manu , setManu] = useState('');
+    let [subManu , setSubManu] = useState('');
+    let [language, setLanguage] = useState('english');
+
+    let current = usePathname();
+    
+    // Define handleClickOutside outside useEffect to fix the cleanup reference issue
+    const handleClickOutside = (event) => {
+        if (isLangOpen && !event.target.closest('.lang-dropdown')) {
+            setLangOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        setManu(current)
+        setSubManu(current)
+
+        if (typeof window !== "undefined") {
+            window.addEventListener("scroll", windowScroll);
+            
+            // Add click outside listener
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+        
+        window.scrollTo(0, 0)
+          
+        return () => {
+            if (typeof window !== "undefined") {
+                document.removeEventListener('mousedown', handleClickOutside);
+                window.removeEventListener("scroll", windowScroll);
+            }
+        };
+    }, [isLangOpen])
+
+    function windowScroll() {
+        setTopNavBar(window.scrollY >= 50)
+        
+        // Close language dropdown on scroll
+        if (isLangOpen) {
+            setLangOpen(false);
+        }
+    }
+
+    const toggleMenu = () => {
+        setMenu(!isOpen)
+        if (document.getElementById("navigation")) {
+            const anchorArray = Array.from(document.getElementById("navigation").getElementsByTagName("a"));
+            anchorArray.forEach(element => {
+                element.addEventListener('click', (elem) => {
+                    const target = elem.target.getAttribute("href")
+                    if (target !== "") {
+                        if (elem.target.nextElementSibling) {
+                            var submenu = elem.target.nextElementSibling.nextElementSibling;
+                            submenu.classList.toggle('open');
+                        }
+                    }
+                })
+            });
+        }
+    }
+
+    const toggleLangDropdown = () => {
+        setLangOpen(!isLangOpen);
+    };
+
+    const changeLang = (lang) => {
+        setLanguage(lang);
+        setLangOpen(false);
+    };
+
+    // Language options with their flag images
+    const languages = [
+        {
+            code: 'english',
+            name: 'English',
+            flag: 'https://cdn.countryflags.com/thumbs/united-kingdom/flag-400.png'
+        },
+        {
+            code: 'nepali',
+            name: 'नेपाली',
+            flag: 'https://cdn.countryflags.com/thumbs/nepal/flag-400.png'
+        },
+        {
+            code: 'arabic',
+            name: 'العربية',
+            flag: 'https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png'
+        }
+    ];
+
+    // Get the current language details
+    const currentLang = languages.find(lang => lang.code === language) || languages[0];
+
+    return (
+        <nav id="topnav" className={`${topNavbar ? 'nav-sticky': ''} defaultscroll is-sticky ${topnavClass}`}>
+            <div className={`${isContainerFluid === true ? 'container-fluid md:px-8 px-3' : 'container'}`}>
+                <Link className="logo" href="/">
+                    <div className="block sm:hidden">
+                        <Image src="/images/logo-icon-40.png"className="h-10 inline-block dark:hidden" alt="" width={40} height={40}/>
+                        <Image src="/images/logo-icon-40-white.png" className="h-10 hidden dark:inline-block" alt="" width={40} height={40}/>
+                    </div>
+
+                    {navClass && navClass.includes('nav-light') ?
+                        <div className="sm:block hidden">
+                            <span className="inline-block dark:hidden">
+                                <Image src="/images/logo-dark.png" className="h-[24px] l-dark" alt="" height={24} width={141}/>
+                                <Image src="/images/logo-light.png" className="h-[24px] l-light" alt="" height={24} width={141}/>
+                            </span>
+                            <Image src="/images/logo-white.png" className="h-[24px] hidden dark:inline-block" alt="" height={24} width={141}/>
+                        </div> :
+                        <div className="sm:block hidden">
+                            <Image src="/images/logo-dark.png" className="h-[24px] inline-block dark:hidden" alt="" height={24} width={141}/>
+                            <Image src="/images/logo-white.png" className="h-[24px] hidden dark:inline-block" alt="" height={24} width={141}/>
+                        </div>
+                    }
+                </Link>
+
+                <div className="menu-extras">
+                    <div className="menu-item">
+                        <Link href="#" className="navbar-toggle" id="isToggle" onClick={toggleMenu}>
+                            <div className="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+                {/* <!-- End Mobile Toggle --> */}
+
+                {/* <!-- Language Dropdown - Positioned to the far right --> */}
+
+                {/* <!-- Language Dropdown - Now positioned as an absolute element on the right --> */}
+                <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40">
+                    <div className="relative lang-dropdown">
+                        <button onClick={toggleLangDropdown} className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-all duration-300 focus:outline-none">
+                            <img 
+                                src={currentLang.flag} 
+                                alt={currentLang.name} 
+                                className="w-5 h-5 object-cover rounded-full"
+                            />
+                            <span className="text-sm font-medium hidden md:inline-block">{currentLang.name}</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        {isLangOpen && (
+                            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1 z-50 border border-gray-200 overflow-hidden">
+                                {languages.map((lang) => (
+                                    <button
+                                        key={lang.code}
+                                        onClick={() => changeLang(lang.code)}
+                                        className={`flex items-center px-4 py-2.5 text-sm w-full text-left hover:bg-gray-50 transition-colors duration-150 ${language === lang.code ? 'bg-gray-50 text-blue-600 font-medium' : ''}`}
+                                    >
+                                        <img 
+                                            src={lang.flag} 
+                                            alt={lang.name} 
+                                            className="w-5 h-5 object-cover rounded-full mr-3"
+                                        />
+                                        <span>{lang.name}</span>
+                                        {language === lang.code && (
+                                            <svg className="h-4 w-4 text-blue-600 ml-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        )}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </div>
+                
+                <div id="navigation" className={`${isOpen === true ? 'hidden' : 'block'}`}>
+                    <ul className={`navigation-menu ${navClass}`}>
+                        <li className={`has-submenu parent-menu-item ${["/", "/index-two", "/index-three", "/index-four","/index-five", "/index-six", "/index-seven","/index-eight","/index-nine","/index-ten","/index-item"].includes(manu) ? 'active' : ''}`}>
+                            <Link href="#" onClick={(e)=>{setSubManu(subManu === "/index-item" ? "" : "/index-item")}}>Home</Link><span className="menu-arrow"></span>
+                            <ul className={`submenu ${["/", "/index-two", "/index-three", "/index-four","/index-five", "/index-six", "/index-seven","/index-eight","/index-nine","/index-ten","/index-item"].includes(subManu) ? 'open' : ''}`}>
+                                <li className={manu ===  "/" ? 'active' : '' }><Link href="/" className="sub-menu-item">Hero One</Link></li>
+                                <li className={manu ===  "/index-two" ? 'active' : '' }><Link href="/index-two" className="sub-menu-item">Hero Two</Link></li>
+                                <li className={manu ===  "/index-three" ? 'active' : '' }><Link href="/index-three" className="sub-menu-item">Hero Three</Link></li>
+                                <li className={manu ===  "/index-four" ? 'active' : '' }><Link href="/index-four" className="sub-menu-item">Hero Four</Link></li>
+                                <li className={manu ===  "/index-five" ? 'active' : '' }><Link href="/index-five" className="sub-menu-item">Hero Five</Link></li>
+                                <li className={manu ===  "/index-six" ? 'active' : '' }><Link href="/index-six" className="sub-menu-item">Hero Six </Link></li>
+                                <li className={manu ===  "/index-seven" ? 'active' : '' }><Link href="/index-seven" className="sub-menu-item">Hero Seven </Link></li>
+                                <li className={manu ===  "/index-eight" ? 'active' : '' }><Link href="/index-eight" className="sub-menu-item">Hero Eight </Link></li>
+                                <li className={manu ===  "/index-nine" ? 'active' : '' }><Link href="/index-nine" className="sub-menu-item">Hero Nine </Link></li>
+                                <li className={manu ===  "/index-ten" ? 'active' : '' }><Link href="/index-ten" className="sub-menu-item">Hero Ten </Link></li>
+                            </ul>
+                        </li>
+
+                        <li className={`has-submenu parent-parent-menu-item ${["/job-categories","/job-grid-one", "/job-grid-two", "/job-grid-three", "/job-grid-four","/grid-item","/job-list-one", "/job-list-two", "/job-list-three", "/job-list-four","/job-list-five","/job-list-six","/list-item","/job-detail-one", "/job-detail-two", "/job-detail-three", "/detail-item","/job-apply","/job-post","/career"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/job-item" ? "" : "/job-item")}}> Jobs </Link><span className="menu-arrow"></span>  
+                            <ul className={`submenu ${["/job-categories","/job-grid-one", "/job-grid-two", "/job-grid-three", "/job-grid-four","/grid-item","/job-list-one", "/job-list-two", "/job-list-three", "/job-list-four","/job-list-five","/job-list-six","/list-item","/job-detail-one", "/job-detail-two", "/job-detail-three", "/detail-item","/job-apply","/job-post","/career"].includes(subManu) ? 'open' : ''}`}>
+                                <li className={manu ===  "/job-categories" ? 'active' : '' }><Link href="/job-categories" className="sub-menu-item">Job Categories</Link></li>
+
+                                <li className={`has-submenu parent-menu-item ${["/job-grid-one", "/job-grid-two", "/job-grid-three", "/job-grid-four","/grid-item"].includes(manu) ? 'active' : ''}`}>
+                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/grid-item" ? "" : "/grid-item")}}> Job Grids </Link><span className="submenu-arrow"></span>
+                                    <ul className={`submenu ${["/job-grid-one", "/job-grid-two", "/job-grid-three", "/job-grid-four","/grid-item"].includes(subManu) ? 'open' : ''}`}>
+                                        <li className={manu ===  "/job-grid-one" ? 'active' : '' }><Link href="/job-grid-one" className="sub-menu-item">Job Grid One</Link></li>
+                                        <li className={manu ===  "/job-grid-two" ? 'active' : '' }><Link href="/job-grid-two" className="sub-menu-item">Job Grid Two</Link></li>
+                                        <li className={manu ===  "/job-grid-three" ? 'active' : '' }><Link href="/job-grid-three" className="sub-menu-item">Job Grid Three</Link></li>
+                                        <li className={manu ===  "/job-grid-four" ? 'active' : '' }><Link href="/job-grid-four" className="sub-menu-item">Job Grid Four </Link></li>
+                                    </ul>
+                                </li>
+
+                                <li className={`has-submenu parent-menu-item ${["/job-list-one", "/job-list-two", "/job-list-three", "/job-list-four","/job-list-five","/job-list-six","/list-item"].includes(manu) ? 'active' : ''}`}>
+                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/list-item" ? "" : "/list-item")}}> Job Lists </Link><span className="submenu-arrow"></span>
+                                    <ul className={`submenu ${["/job-list-one", "/job-list-two", "/job-list-three", "/job-list-four","/job-list-five","/job-list-six","/grid-item"].includes(subManu) ? 'open' : ''}`}>
+                                        <li className={manu ===  "/job-list-one" ? 'active' : '' }><Link href="/job-list-one" className="sub-menu-item">Job List One</Link></li>
+                                        <li className={manu ===  "/job-list-two" ? 'active' : '' }><Link href="/job-list-two" className="sub-menu-item">Job List Two</Link></li>
+                                        <li className={manu ===  "/job-list-three" ? 'active' : '' }><Link href="/job-list-three" className="sub-menu-item">Job List Three</Link></li>
+                                        <li className={manu ===  "/job-list-four" ? 'active' : '' }><Link href="/job-list-four" className="sub-menu-item">Job List Four</Link></li>
+                                        <li className={manu ===  "/job-list-five" ? 'active' : '' }><Link href="/job-list-five" className="sub-menu-item">Job List Five </Link></li>
+                                        <li className={manu ===  "/job-list-six" ? 'active' : '' }><Link href="/job-list-six" className="sub-menu-item">Job List Six </Link></li>
+                                    </ul>
+                                </li>
+
+                                <li className={`has-submenu parent-menu-item ${["/job-detail-one", "/job-detail-two", "/job-detail-three", "/detail-item"].includes(manu) ? 'active' : ''}`}>
+                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/detail-item" ? "" : "/detail-item")}}> Job Detail </Link><span className="submenu-arrow"></span>
+                                    <ul className={`submenu ${["/job-detail-one", "/job-detail-two", "/job-detail-three", "/detail-item"].includes(subManu) ? 'open' : ''}`}>
+                                        <li className={manu ===  "/job-detail-one" ? 'active' : '' }><Link href="/job-detail-one" className="sub-menu-item">Job Detail One</Link></li>
+                                        <li className={manu ===  "/job-detail-two" ? 'active' : '' }><Link href="/job-detail-two" className="sub-menu-item">Job Detail Two</Link></li>
+                                        <li className={manu ===  "/job-detail-three" ? 'active' : '' }><Link href="/job-detail-three" className="sub-menu-item">Job Detail Three</Link></li>
+                                    </ul>
+                                </li>
+
+                                <li className={manu ===  "/job-apply" ? 'active' : '' }><Link href="/job-apply" className="sub-menu-item">Job Apply</Link></li>
+
+                                <li className={manu ===  "/job-post" ? 'active' : '' }><Link href="/job-post" className="sub-menu-item">Job Post </Link></li>
+
+                                <li className={manu ===  "/career" ? 'active' : '' }><Link href="/career" className="sub-menu-item">Career </Link></li>
+                            </ul>
+                        </li>
+
+                        <li className={`has-submenu parent-parent-menu-item ${["/aboutus","/services","/pricing","/employers-item", "/employer-list", "/employer-profile","/candidates-item", "/candidate-list", "/candidate-profile","/candidate-profile-setting","/help-item", "/helpcenter-overview", "/helpcenter-faqs","/helpcenter-guides","/helpcenter-support","/blog-item", "/blogs", "/blog-detail","/auth-item", "/login", "/signup","/reset-password","/lock-screen","/utility-item", "/terms", "/privacy","/special-item", "/comingsoon", "/maintenance","/error","/thankyou"].includes(manu) ? 'active' : ''}`}>
+                            <Link href="#" onClick={(e)=>{setSubManu(subManu === "/page-item" ? "" : "/page-item")}}>Pages</Link><span className="menu-arrow"></span>
+                            <ul className={`submenu ${["/aboutus","/services","/pricing","/employers-item", "/employer-list", "/employer-profile","/candidates-item", "/candidate-list", "/candidate-profile","/candidate-profile-setting","/help-item", "/helpcenter-overview", "/helpcenter-faqs","/helpcenter-guides","/helpcenter-support","/blog-item", "/blogs", "/blog-detail","/auth-item", "/login", "/signup","/reset-password","/lock-screen","/utility-item", "/terms", "/privacy","/special-item", "/comingsoon", "/maintenance","/error","/thankyou"].includes(subManu) ? 'open' : ''}`}>
+                                <li className={manu ===  "/aboutus" ? 'active' : '' }><Link href="/aboutus" className="sub-menu-item">About Us</Link></li>
+                                <li className={manu ===  "/services" ? 'active' : '' }><Link href="/services" className="sub-menu-item">Services</Link></li>
+                                <li className={manu ===  "/pricing" ? 'active' : '' }><Link href="/pricing" className="sub-menu-item">Pricing </Link></li>
+
+                                <li className={`has-submenu parent-menu-item ${["/employers-item", "/employer-list", "/employer-profile"].includes(manu) ? 'active' : ''}`}>
+                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/employers-item" ? "" : "/employers-item")}}>Employers</Link><span className="submenu-arrow"></span>
+                                    <ul className={`submenu ${["/employers-item", "/employer-list", "/employer-profile"].includes(subManu) ? 'open' : ''}`}>
+                                        <li className={manu ===  "/employer-list" ? 'active' : '' }><Link href="/employer-list" className="sub-menu-item">Employers</Link></li>
+                                        <li className={manu ===  "/employer-profile" ? 'active' : '' }><Link href="/employer-profile" className="sub-menu-item">Employer Detail</Link></li>
+                                    </ul>
+                                </li>
+
+                                <li className={`has-submenu parent-menu-item ${["/candidates-item", "/candidate-list", "/candidate-profile","/candidate-profile-setting"].includes(manu) ? 'active' : ''}`}>
+                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/candidates-item" ? "" : "/candidates-item")}}>Candidates </Link><span className="submenu-arrow"></span>
+                                    <ul className={`submenu ${["/candidates-item", "/candidate-list", "/candidate-profile","/candidate-profile-setting"].includes(subManu) ? 'open' : ''}`}>
+                                        <li className={manu ===  "/candidate-list" ? 'active' : '' }><Link href="/candidate-list" className="sub-menu-item">Candidates</Link></li>
+                                        <li className={manu ===  "/candidate-profile" ? 'active' : '' }><Link href="/candidate-profile" className="sub-menu-item">Candidate Profile</Link></li>
+                                        <li className={manu ===  "/candidate-profile-setting" ? 'active' : '' }><Link href="/candidate-profile-setting" className="sub-menu-item">Profile Setting </Link></li>
+                                    </ul>
+                                </li>
+
+                                <li className={`has-submenu parent-menu-item ${["/help-item", "/helpcenter-overview", "/helpcenter-faqs","/helpcenter-guides","/helpcenter-support"].includes(manu) ? 'active' : ''}`}>
+                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/help-item" ? "" : "/help-item")}}> Helpcenter </Link><span className="submenu-arrow"></span>
+                                    <ul className={`submenu ${["/help-item", "/helpcenter-overview", "/helpcenter-faqs","/helpcenter-guides","/helpcenter-support"].includes(subManu) ? 'open' : ''}`}>
+                                        <li className={manu ===  "/helpcenter-overview" ? 'active' : '' }><Link href="/helpcenter-overview" className="sub-menu-item">Overview</Link></li>
+                                        <li className={manu ===  "/helpcenter-faqs" ? 'active' : '' }><Link href="/helpcenter-faqs" className="sub-menu-item">FAQs</Link></li>
+                                        <li className={manu ===  "/helpcenter-guides" ? 'active' : '' }><Link href="/helpcenter-guides" className="sub-menu-item">Guides</Link></li>
+                                        <li className={manu ===  "/helpcenter-support" ? 'active' : '' }><Link href="/helpcenter-support" className="sub-menu-item">Support</Link></li>
+                                    </ul>
+                                </li>
+
+                                <li className={`has-submenu parent-menu-item ${["/blog-item", "/blogs", "/blog-detail"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/blog-item" ? "" : "/blog-item")}}> Blog </Link><span className="submenu-arrow"></span>
+                                    <ul className={`submenu ${["/blog-item", "/blogs", "/blog-detail"].includes(subManu) ? 'open' : ''}`}>
+                                        <li className={manu ===  "/blogs" ? 'active' : '' }><Link href="/blogs" className="sub-menu-item"> Blogs</Link></li>
+                                        <li className={manu ===  "/blog-detail" ? 'active' : '' }><Link href="/blog-detail" className="sub-menu-item"> Blog Detail</Link></li>
+                                    </ul>
+                                </li>
+
+                                <li className={`has-submenu parent-menu-item ${["/auth-item", "/login", "/signup","/reset-password","/lock-screen"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/auth-item" ? "" : "/auth-item")}}> Auth Pages </Link><span className="submenu-arrow"></span>
+                                    <ul className={`submenu ${["/auth-item", "/login", "/signup","/reset-password","/lock-screen"].includes(subManu) ? 'open' : ''}`}>
+                                        <li className={manu ===  "/login" ? 'active' : '' }><Link href="/login" className="sub-menu-item"> Login</Link></li>
+                                        <li className={manu ===  "/signup" ? 'active' : '' }><Link href="/signup" className="sub-menu-item"> Signup</Link></li>
+                                        <li className={manu ===  "/reset-password" ? 'active' : '' }><Link href="/reset-password" className="sub-menu-item"> Forgot Password</Link></li>
+                                        <li className={manu ===  "/lock-screen" ? 'active' : '' }><Link href="/lock-screen" className="sub-menu-item"> Lock Screen</Link></li>
+                                    </ul>
+                                </li>
+
+                                <li className={`has-submenu parent-menu-item ${["/utility-item", "/terms", "/privacy"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/utility-item" ? "" : "/utility-item")}}> Utility </Link><span className="submenu-arrow"></span>
+                                    <ul className={`submenu ${["/utility-item", "/terms", "/privacy"].includes(subManu) ? 'open' : ''}`}>
+                                        <li className={manu ===  "/terms" ? 'active' : '' }><Link href="/terms" className="sub-menu-item">Terms of Services</Link></li>
+                                        <li className={manu ===  "/privacy" ? 'active' : '' }><Link href="/privacy" className="sub-menu-item">Privacy Policy</Link></li>
+                                    </ul>
+                                </li>
+
+                                <li className={`has-submenu parent-menu-item ${["/special-item", "/comingsoon", "/maintenance","/error","/thankyou"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/special-item" ? "" : "/special-item")}}> Special </Link><span className="submenu-arrow"></span>
+                                    <ul className={`submenu ${["/special-item", "/comingsoon", "/maintenance","/error","/thankyou"].includes(subManu) ? 'open' : ''}`}>
+                                        <li className={manu ===  "/comingsoon" ? 'active' : '' }><Link href="/comingsoon" className="sub-menu-item"> Coming Soon</Link></li>
+                                        <li className={manu ===  "/maintenance" ? 'active' : '' }><Link href="/maintenance" className="sub-menu-item"> Maintenance</Link></li>
+                                        <li className={manu ===  "/error" ? 'active' : '' }><Link href="/error" className="sub-menu-item"> 404!</Link></li>
+                                        <li className={manu ===  "/thankyou" ? 'active' : '' }><Link href="/thankyou" className="sub-menu-item"> Thank you</Link></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li className={manu ===  "/contact" ? 'active' : '' }><Link href="/contact" className="sub-menu-item">Contact</Link></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    )
+}
