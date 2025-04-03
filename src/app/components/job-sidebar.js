@@ -17,20 +17,46 @@ export default function JobSidebar() {
                         <div>
                             <label className="font-semibold">Categories</label>
                             <select className="form-select form-input border border-slate-100 dark:border-slate-800 block w-full mt-1">
-                                <option value="WD">Web Designer</option>
-                                <option value="WD">Web Developer</option>
-                                <option value="UI">UI / UX Desinger</option>
+                            <option value="construction_worker">Construction Worker</option>
+                            <option value="electrician">Electrician</option>
+                            <option value="plumber">Plumber</option>
+                            <option value="welder">Welder</option>
+                            <option value="carpenter">Carpenter</option>
+                            <option value="driver">Driver (Truck/Taxi)</option>
+                            <option value="security_guard">Security Guard</option>
+                            <option value="cleaner">Cleaner</option>
+                            <option value="housekeeping">Housekeeping</option>
+                            <option value="factory_worker">Factory Worker</option>
+                            <option value="mechanic">Auto Mechanic</option>
+                            <option value="mason">Mason</option>
+                            <option value="gardener">Gardener</option>
+                            <option value="painter">Painter</option>
                             </select>
-
                         </div>
 
                         <div>
                             <label className="font-semibold">Location</label>
                             <select className="form-select form-input border border-slate-100 dark:border-slate-800 block w-full mt-1">
-                                <option value="NY">New York</option>
-                                <option value="MC">North Carolina</option>
-                                <option value="SC">South Carolina</option>
+                            <option value="AE">United Arab Emirates</option>
+                            <option value="SA">Saudi Arabia</option>
+                            <option value="KW">Kuwait</option>
+                            <option value="QA">Qatar</option>
+                            <option value="OM">Oman</option>
+                            <option value="BH">Bahrain</option>
+                            <option value="EG">Egypt</option>
+                            <option value="JO">Jordan</option>
+                            <option value="LB">Lebanon</option>
+                            <option value="IQ">Iraq</option>
+                            <option value="MA">Morocco</option>
+                            <option value="DZ">Algeria</option>
+                            <option value="TN">Tunisia</option>
+                            <option value="YE">Yemen</option>
+                            <option value="SD">Sudan</option>
+                            <option value="SY">Syria</option>
+                            <option value="PS">Palestine</option>
+                            <option value="LY">Libya</option>
                             </select>
+
                         </div>
 
                         <div>
@@ -38,51 +64,51 @@ export default function JobSidebar() {
                             <div className="block mt-2">
                                 <div className="flex justify-between">
                                     <label className="inline-flex items-center">
-                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-emerald-600 rounded size-4" defaultChecked />
+                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-skyblue rounded size-4" defaultChecked />
                                         <span className="ms-2 text-slate-400">Full Time</span>
                                     </label>
 
-                                    <span className="bg-emerald-600/10 text-emerald-600 text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">3</span>
+                                    <span className="bg-emerald-600/10 text-skyblue text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">3</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <label className="inline-flex items-center">
-                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-emerald-600 rounded size-4" />
+                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-skyblue rounded size-4" />
                                         <span className="ms-2 text-slate-400">Part Time</span>
                                     </label>
 
-                                    <span className="bg-emerald-600/10 text-emerald-600 text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">7</span>
+                                    <span className="bg-emerald-600/10 text-skyblue text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">7</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <label className="inline-flex items-center">
-                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-emerald-600 rounded size-4" />
+                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-skyblue rounded size-4" />
                                         <span className="ms-2 text-slate-400">Freelancing</span>
                                     </label>
 
-                                    <span className="bg-emerald-600/10 text-emerald-600 text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">4</span>
+                                    <span className="bg-emerald-600/10 text-skyblue text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">4</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <label className="inline-flex items-center">
-                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-emerald-600 rounded size-4" />
+                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-skyblue rounded size-4" />
                                         <span className="ms-2 text-slate-400">Fixed Price</span>
                                     </label>
 
-                                    <span className="bg-emerald-600/10 text-emerald-600 text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">6</span>
+                                    <span className="bg-emerald-600/10 text-skyblue text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">6</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <label className="inline-flex items-center">
-                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-emerald-600 rounded size-4" />
+                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-skyblue rounded size-4" />
                                         <span className="ms-2 text-slate-400">Remote</span>
                                     </label>
 
-                                    <span className="bg-emerald-600/10 text-emerald-600 text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">7</span>
+                                    <span className="bg-emerald-600/10 text-skyblue text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">7</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <label className="inline-flex items-center">
-                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-emerald-600 rounded size-4" />
+                                        <input type="checkbox" className="form-checkbox border border-slate-100 dark:border-slate-800 text-skyblue rounded size-4" />
                                         <span className="ms-2 text-slate-400">Hourly Basis</span>
                                     </label>
 
-                                    <span className="bg-emerald-600/10 text-emerald-600 text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">44</span>
+                                    <span className="bg-emerald-600/10 text-skyblue text-xs px-2.5 py-0.5 font-semibold rounded-full h-5">44</span>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +119,7 @@ export default function JobSidebar() {
                                 <div>
                                     <label className="inline-flex items-center">
                                         <input type="radio"
-                                            className="form-radio text-emerald-600 border border-slate-100 dark:border-slate-800"
+                                            className="form-radio text-skyblue border border-slate-100 dark:border-slate-800"
                                             name="radio-colors" 
                                         />
                                         <span className="ms-2 text-slate-400">10k - 15k</span>
@@ -102,7 +128,7 @@ export default function JobSidebar() {
                                 <div>
                                     <label className="inline-flex items-center">
                                         <input type="radio"
-                                            className="form-radio text-emerald-600 border border-slate-100 dark:border-slate-800"
+                                            className="form-radio text-skyblue border border-slate-100 dark:border-slate-800"
                                             name="radio-colors"/>
                                         <span className="ms-2 text-slate-400">15k - 25k</span>
                                     </label>
@@ -110,7 +136,7 @@ export default function JobSidebar() {
                                 <div>
                                     <label className="inline-flex items-center">
                                         <input type="radio"
-                                            className="form-radio text-emerald-600 border border-slate-100 dark:border-slate-800"
+                                            className="form-radio text-skyblue border border-slate-100 dark:border-slate-800"
                                             name="radio-colors"  defaultChecked/>
                                         <span className="ms-2 text-slate-400">more than 25K</span>
                                     </label>
@@ -119,7 +145,7 @@ export default function JobSidebar() {
                         </div>
 
                         <div>
-                            <input type="submit" className="btn bg-emerald-600 hover:bg-emerald-700 border-emerald-600 hover:border-emerald-700 text-white rounded-md w-full" value="Apply Filter" />
+                            <input type="submit" className="btn bg-skyblue hover:bg-blue-700 border-skyblue hover:border-blue-700 text-white rounded-md w-full" value="Apply Filter" />
                         </div>
                     </div>
                 </form>

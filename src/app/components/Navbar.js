@@ -178,44 +178,11 @@ export default function Navbar(props) {
 
                         <li className={`has-submenu parent-parent-menu-item ${["/job-categories","/job-grid-one", "/job-grid-two", "/job-grid-three", "/job-grid-four","/grid-item","/job-list-one", "/job-list-two", "/job-list-three", "/job-list-four","/job-list-five","/job-list-six","/list-item","/job-detail-one", "/job-detail-two", "/job-detail-three", "/detail-item","/job-apply","/job-post","/career"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/job-item" ? "" : "/job-item")}}> Jobs </Link><span className="menu-arrow"></span>  
                             <ul className={`submenu ${["/job-categories","/job-grid-one", "/job-grid-two", "/job-grid-three", "/job-grid-four","/grid-item","/job-list-one", "/job-list-two", "/job-list-three", "/job-list-four","/job-list-five","/job-list-six","/list-item","/job-detail-one", "/job-detail-two", "/job-detail-three", "/detail-item","/job-apply","/job-post","/career"].includes(subManu) ? 'open' : ''}`}>
-                                <li className={manu ===  "/job-categories" ? 'active' : '' }><Link href="/job-categories" className="sub-menu-item">Job Categories</Link></li>
-
-                                <li className={`has-submenu parent-menu-item ${["/job-grid-one", "/job-grid-two", "/job-grid-three", "/job-grid-four","/grid-item"].includes(manu) ? 'active' : ''}`}>
-                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/grid-item" ? "" : "/grid-item")}}> Job Grids </Link><span className="submenu-arrow"></span>
-                                    <ul className={`submenu ${["/job-grid-one", "/job-grid-two", "/job-grid-three", "/job-grid-four","/grid-item"].includes(subManu) ? 'open' : ''}`}>
-                                        <li className={manu ===  "/job-grid-one" ? 'active' : '' }><Link href="/job-grid-one" className="sub-menu-item">Job Grid One</Link></li>
-                                        <li className={manu ===  "/job-grid-two" ? 'active' : '' }><Link href="/job-grid-two" className="sub-menu-item">Job Grid Two</Link></li>
-                                        <li className={manu ===  "/job-grid-three" ? 'active' : '' }><Link href="/job-grid-three" className="sub-menu-item">Job Grid Three</Link></li>
-                                        <li className={manu ===  "/job-grid-four" ? 'active' : '' }><Link href="/job-grid-four" className="sub-menu-item">Job Grid Four </Link></li>
-                                    </ul>
-                                </li>
-
+                                <li className={manu ===  "/job-categories" ? 'active' : '' }><Link href="/job-categories" className="sub-menu-item">How to apply?</Link></li>
                                 <li className={`has-submenu parent-menu-item ${["/job-list-one", "/job-list-two", "/job-list-three", "/job-list-four","/job-list-five","/job-list-six","/list-item"].includes(manu) ? 'active' : ''}`}>
-                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/list-item" ? "" : "/list-item")}}> Job Lists </Link><span className="submenu-arrow"></span>
-                                    <ul className={`submenu ${["/job-list-one", "/job-list-two", "/job-list-three", "/job-list-four","/job-list-five","/job-list-six","/grid-item"].includes(subManu) ? 'open' : ''}`}>
-                                        <li className={manu ===  "/job-list-one" ? 'active' : '' }><Link href="/job-list-one" className="sub-menu-item">Job List One</Link></li>
-                                        <li className={manu ===  "/job-list-two" ? 'active' : '' }><Link href="/job-list-two" className="sub-menu-item">Job List Two</Link></li>
-                                        <li className={manu ===  "/job-list-three" ? 'active' : '' }><Link href="/job-list-three" className="sub-menu-item">Job List Three</Link></li>
-                                        <li className={manu ===  "/job-list-four" ? 'active' : '' }><Link href="/job-list-four" className="sub-menu-item">Job List Four</Link></li>
-                                        <li className={manu ===  "/job-list-five" ? 'active' : '' }><Link href="/job-list-five" className="sub-menu-item">Job List Five </Link></li>
-                                        <li className={manu ===  "/job-list-six" ? 'active' : '' }><Link href="/job-list-six" className="sub-menu-item">Job List Six </Link></li>
-                                    </ul>
+                                <Link href="/job-list-six" className="sub-menu-item">Job Vacency</Link>
                                 </li>
-
-                                <li className={`has-submenu parent-menu-item ${["/job-detail-one", "/job-detail-two", "/job-detail-three", "/detail-item"].includes(manu) ? 'active' : ''}`}>
-                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/detail-item" ? "" : "/detail-item")}}> Job Detail </Link><span className="submenu-arrow"></span>
-                                    <ul className={`submenu ${["/job-detail-one", "/job-detail-two", "/job-detail-three", "/detail-item"].includes(subManu) ? 'open' : ''}`}>
-                                        <li className={manu ===  "/job-detail-one" ? 'active' : '' }><Link href="/job-detail-one" className="sub-menu-item">Job Detail One</Link></li>
-                                        <li className={manu ===  "/job-detail-two" ? 'active' : '' }><Link href="/job-detail-two" className="sub-menu-item">Job Detail Two</Link></li>
-                                        <li className={manu ===  "/job-detail-three" ? 'active' : '' }><Link href="/job-detail-three" className="sub-menu-item">Job Detail Three</Link></li>
-                                    </ul>
-                                </li>
-
-                                <li className={manu ===  "/job-apply" ? 'active' : '' }><Link href="/job-apply" className="sub-menu-item">Job Apply</Link></li>
-
-                                <li className={manu ===  "/job-post" ? 'active' : '' }><Link href="/job-post" className="sub-menu-item">Job Post </Link></li>
-
-                                <li className={manu ===  "/career" ? 'active' : '' }><Link href="/career" className="sub-menu-item">Career </Link></li>
+                                <li className={manu ===  "/job-apply" ? 'active' : '' }><Link href="/job-apply" className="sub-menu-item">Apply For A Job</Link></li>
                             </ul>
                         </li>
 

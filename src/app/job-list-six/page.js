@@ -9,6 +9,8 @@ import Feature from '../components/Feature';
 import JobListCompSix from '../components/job-list-comp-six'
 
 import JobSidebar from '../components/job-sidebar';
+import JobFeature from '../components/JobFeature';
+import JobCategoryFeature from '../components/jobCategoryFeature';
 
 export default function JobListSix() {
     return (
@@ -16,8 +18,8 @@ export default function JobListSix() {
             <Navbar navClass='justify-end nav-light' />
 
 
-            <section className="relative table w-full py-36 bg-[url('/images/hero/bg.jpg')] bg-top bg-no-repeat bg-cover">
-                <div className="absolute inset-0 bg-emerald-900/90"></div>
+            <section className="relative table w-full py-36 bg-[url('/images/skyblue/backgroundpeople.jpeg')] bg-top bg-no-repeat bg-cover">
+                <div className="absolute inset-0 bg-skyblue opacity-60"></div>
                 <div className="container">
                     <div className="grid grid-cols-1 text-center mt-10">
                         <h3 className="md:text-3xl text-2xl md:leading-snug tracking-wide leading-snug font-medium text-white">Job Vacancies</h3>
@@ -26,7 +28,7 @@ export default function JobListSix() {
 
                 <div className="absolute text-center z-10 bottom-5 start-0 end-0 mx-3">
                     <ul className="breadcrumb tracking-[0.5px] breadcrumb-light mb-0 inline-block">
-                        <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white/50 hover:text-white"><Link href="/">Jobstack</Link></li>
+                        <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-slate-200 hover:text-white"><Link href="/">Sky Blue Hr Solutions Pvt.Ltd</Link></li>
                         <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white" aria-current="page">Job Listing</li>
                     </ul>
                 </div>
@@ -46,7 +48,7 @@ export default function JobListSix() {
                     </div>
                 </div>
 
-                <Feature />
+                <JobFeature />
                 <ExploreJob/>
                 
             </section>
