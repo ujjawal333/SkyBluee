@@ -155,7 +155,7 @@ export default function JobApply() {
         <>
             <Navbar navClass='justify-end nav-light' />
             <section className="relative table w-full py-36 bg-top bg-no-repeat bg-cover" style={{backgroundImage:"url('/images/hero/bg.jpg')"}}>
-                <div className="absolute inset-0 bg-emerald-900/90"></div>
+                <div className="absolute inset-0 bg-skyblue opacity-60"></div>
                 <div className="container">
                     <div className="grid grid-cols-1 text-center mt-10">
                         <h3 className="md:text-3xl text-2xl md:leading-snug tracking-wide leading-snug font-medium text-white">Back-End Developer</h3>

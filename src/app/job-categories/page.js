@@ -10,6 +10,7 @@ import CategoriesFaq from '../components/categories-faq';
 import JobCategoryFeature from '../components/jobCategoryFeature';
 import HowWeWork from '../components/howwework';
 import FrequentlyNeededThings from '../components/frequentNeededThings';
+import ApplyForJobs from '../components/applyforjob';
 
 export default function JobCategories() {
     return (
@@ -46,7 +47,7 @@ export default function JobCategories() {
                     <FrequentlyNeededThings/>
                 </div>
                 <JobCategoryFeature />
-                <ExploreJob />
+                <ApplyForJobs/>
             </section >
             <Footer />
             <Switcher/>

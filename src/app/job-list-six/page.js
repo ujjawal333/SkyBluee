@@ -11,6 +11,7 @@ import JobListCompSix from '../components/job-list-comp-six'
 import JobSidebar from '../components/job-sidebar';
 import JobFeature from '../components/JobFeature';
 import JobCategoryFeature from '../components/jobCategoryFeature';
+import ApplyForJobs from '../components/applyforjob';
 
 export default function JobListSix() {
     return (
@@ -49,7 +50,7 @@ export default function JobListSix() {
                 </div>
 
                 <JobFeature />
-                <ExploreJob/>
+                <ApplyForJobs/>
                 
             </section>
             <Footer />
