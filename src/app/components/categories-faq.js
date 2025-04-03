@@ -1,9 +1,9 @@
 'use client'
-import React, { useState } from 'react'
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import ModalVideo from 'react-modal-video'
+import ModalVideo from 'react-modal-video';
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 
 export default function CategoriesFaq() {
@@ -57,7 +57,7 @@ export default function CategoriesFaq() {
                 <div className="lg:ms-5">
                     <h3 className="mb-6 md:text-[26px] text-2xl md:leading-normal leading-normal font-semibold">Frequently Asked Questions</h3>
 
-                    <p className="text-slate-400 max-w-xl">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+                    <p className="text-slate-400 max-w-xl">Search all the open positions with SkyBlue HR. Get your own personalized salary estimate. Read reviews on over 65+ companies worldwide.</p>
 
                     <div id="accordion-collapseone" data-accordion="collapse" className="mt-8">
                         {accordionData.map((item, index) => (

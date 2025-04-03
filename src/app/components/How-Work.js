@@ -1,7 +1,6 @@
 // home three //
-import React from 'react';
 import Link from 'next/link';
-import {FiAirplay, FiChrome, TbCameraPlus, FiArrowRight} from '../assets/icons/vander'
+import { FiAirplay, FiArrowRight, FiChrome, TbCameraPlus } from '../assets/icons/vander';
 
 export default function Works() {
     const home = [
@@ -28,7 +27,7 @@ export default function Works() {
             <div className="grid grid-cols-1 pb-8 text-center">
                 <h3 className="mb-4 md:text-[26px] md:leading-normal text-2xl leading-normal font-semibold">How its Work?</h3>
 
-                <p className="text-slate-400 max-w-xl mx-auto">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+                <p className="text-slate-400 max-w-xl mx-auto">Search all the open positions with SkyBlue HR. Get your own personalized salary estimate. Read reviews on over 65+ companies worldwide.</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-6 gap-[30px]">

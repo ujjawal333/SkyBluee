@@ -1,13 +1,13 @@
 'use client'
-import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 import ModalVideo from 'react-modal-video';
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 
 
-import {MdOutlineCheckCircleOutline, FiMail} from '../assets/icons/vander'
+import { FiMail, MdOutlineCheckCircleOutline } from '../assets/icons/vander';
 
 export default function MillionsJob() {
     const [isOpen, setOpen] = useState(false)
@@ -33,18 +33,18 @@ export default function MillionsJob() {
 
                 <div className="lg:col-span-7 md:col-span-6 mt-14 md:mt-0">
                     <div className="lg:ms-5">
-                        <h3 className="mb-6 md:text-[26px] text-2xl md:leading-normal leading-normal font-semibold">Millions of jobs. <br /> Find the one thats right for you.</h3>
+                        <h3 className="mb-6 md:text-[26px] text-2xl md:leading-normal leading-normal font-semibold">Thousands of opportunities. <br /> Find the one thats right for you.</h3>
 
-                        <p className="text-slate-400 max-w-xl">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+                        <p className="text-slate-400 max-w-xl">Find the best job opportunities abroad. Get connected with top employers. Trusted by 65+ clients worldwide.</p>
 
                         <ul className="list-none text-slate-400 mt-4">
-                            <li className="mb-1 flex items-center"><MdOutlineCheckCircleOutline className="text-emerald-600 text-xl me-2"/> Digital Marketing Solutions for Tomorrow</li>
-                            <li className="mb-1 flex items-center ms-0"><MdOutlineCheckCircleOutline className="text-emerald-600 text-xl me-2"/> Our Talented & Experienced Marketing Agency</li>
-                            <li className="mb-1 flex items-center ms-0"><MdOutlineCheckCircleOutline className="text-emerald-600 text-xl me-2"/> Create your own skin to match your brand</li>
+                            <li className="mb-1 flex items-center"><MdOutlineCheckCircleOutline className="text-skyblue text-xl me-2"/> Global Workforce Solutions</li>
+                            <li className="mb-1 flex items-center ms-0"><MdOutlineCheckCircleOutline className="text-skyblue text-xl me-2"/> End-to-End Recruitment Services</li>
+                            <li className="mb-1 flex items-center ms-0"><MdOutlineCheckCircleOutline className="text-skyblue text-xl me-2"/> Comprehensive Visa & Immigration Assistance</li>
                         </ul>
 
                         <div className="mt-6">
-                            <Link href="/contact" className="btn bg-emerald-600 hover:bg-emerald-700 border-emerald-600 hover:border-emerald-700 text-white mt-2 rounded-md inline-flex items-center gap-1"><FiMail/> Contact us</Link>
+                            <Link href="/contact" className="btn bg-skyblue hover:bg-skydarkgrey border-emerald-600 hover:border-emerald-700 text-white mt-2 rounded-md inline-flex items-center gap-1"><FiMail/> Contact us</Link>
                         </div>
                     </div>
                 </div>

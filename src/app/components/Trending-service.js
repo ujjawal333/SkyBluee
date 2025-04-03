@@ -1,10 +1,10 @@
 'use client'
-import React,{useState,useEffect} from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import dynamic from "next/dynamic";
-const TinySlider = dynamic(() => import("tiny-slider-react"));
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import '../../../node_modules/tiny-slider/dist/tiny-slider.css';
+const TinySlider = dynamic(() => import("tiny-slider-react"));
 
 import { services } from './Data';
 
@@ -49,7 +49,7 @@ export default function TrendingService() {
             <div className="grid md:grid-cols-12 grid-cols-1 pb-8 items-end">
                 <div className="lg:col-span-8 md:col-span-6">
                     <h3 className="mb-4 md:text-[26px] md:leading-normal text-2xl leading-normal font-semibold">Trending Services</h3>
-                    <p className="text-slate-400 max-w-xl">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+                    <p className="text-slate-400 max-w-xl">Search all the open positions with SkyBlue HR. Get your own personalized salary estimate. Read reviews on over 65+ companies worldwide.</p>
                 </div>
             </div>
 

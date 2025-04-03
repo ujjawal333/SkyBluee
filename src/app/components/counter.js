@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import CountUp from 'react-countup';
 
 export default function Counter() {
@@ -8,9 +7,9 @@ export default function Counter() {
     <div className="relative grid md:grid-cols-3 grid-cols-1 items-center gap-[30px] z-1">
         <div className="counter-box text-center">
             <h1 className="lg:text-5xl text-4xl font-semibold mb-2 dark:text-white"><CountUp
-                start={1010}
-                end={1548}
-                duration={3}
+                start={0}
+                end={154800}
+                duration={10}
             />
                 K+</h1>
 

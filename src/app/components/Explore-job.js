@@ -1,7 +1,6 @@
-import React from 'react';
 import Link from 'next/link';
 
-import {FiMail, LuPencil} from '../assets/icons/vander'
+import { FiMail, LuPencil } from '../assets/icons/vander';
 
 export default function ExploreJob() {
     return (
@@ -12,15 +11,15 @@ export default function ExploreJob() {
                         <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
                             <div className="lg:col-span-8 md:col-span-7">
                                 <div className="ltr:md:text-left rtl:md:text-right text-center relative z-1">
-                                    <h3 className="text-2xl font-semibold text-black dark:text-white mb-4">Explore a job now!</h3>
-                                    <p className="text-slate-400 max-w-xl">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+                                    <h3 className="text-2xl font-semibold text-black dark:text-white mb-4">Explore a career with SkyBlue HR</h3>
+                                    <p className="text-slate-400 max-w-xl">Search for open positions across multiple industries, find candidates suited to your business needs, and get personalized recruitment solutions. Read reviews and testimonials from our satisfied clients and candidates worldwide."</p>
                                 </div>
                             </div>
 
                             <div className="lg:col-span-4 md:col-span-5">
                                 <div className="ltr:text-right rtl:text-left relative z-1">
-                                    <Link href="/employer-profile/1" className="btn bg-emerald-600 hover:bg-emerald-700 border-emerald-600 dark:border-emerald-600 text-white rounded-md">Apply Now</Link>
-                                    <Link href="/aboutus" className="btn bg-emerald-600/5 hover:bg-emerald-600 border-emerald-600/10 hover:border-emerald-600 text-emerald-600 hover:text-white rounded-md ms-2">Learn More</Link>
+                                    <Link href="/employer-profile/1" className="btn bg-skyblue hover:bg- border-skyblue dark:border-skyblue text-white rounded-md">Apply Now</Link>
+                                    <Link href="/aboutus" className="btn bg-skyblue/5 hover:bg-skyblue border-skyblue/10 hover:border-skyblue text-skyblue hover:text-white rounded-md ms-2">Learn More</Link>
                                 </div>
                             </div>
                         </div>

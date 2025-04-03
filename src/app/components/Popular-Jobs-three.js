@@ -1,8 +1,7 @@
-import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 
-import {LuCircleDollarSign, FiClock, FiArrowRight} from '../assets/icons/vander'
+import { FiArrowRight, FiClock, LuCircleDollarSign } from '../assets/icons/vander';
 
 import { jobs } from './Data';
 
@@ -15,7 +14,7 @@ export default function PopularJobsThree() {
                 <div className="grid grid-cols-1 pb-8 text-center">
                     <h3 className="mb-4 md:text-[26px] md:leading-normal text-2xl leading-normal font-semibold">Popular Jobs</h3>
 
-                    <p className="text-slate-400 max-w-xl mx-auto">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+                    <p className="text-slate-400 max-w-xl mx-auto">Search all the open positions with SkyBlue HR. Get your own personalized salary estimate. Read reviews on over 65+ companies worldwide.</p>
                 </div>
 
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">

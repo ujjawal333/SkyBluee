@@ -1,9 +1,8 @@
 'use client'
-import React from 'react'
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
-import {companiesData} from "../components/Data"
+import { companiesData } from "../components/Data";
 
 export default function EmployerDetailComp() {
     let companiesDatas = companiesData.slice(0, 4)
@@ -14,7 +13,7 @@ export default function EmployerDetailComp() {
                 <div className="grid grid-cols-1 pb-8 text-center">
                     <h3 className="mb-4 md:text-[26px] md:leading-normal text-2xl leading-normal font-semibold">Related Companies</h3>
 
-                    <p className="text-slate-400 dark:text-slate-300 max-w-xl mx-auto">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+                    <p className="text-slate-400 dark:text-slate-300 max-w-xl mx-auto">Search all the open positions with SkyBlue HR. Get your own personalized salary estimate. Read reviews on over 65+ companies worldwide.</p>
                 </div>
 
                 <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-[30px] mt-8">

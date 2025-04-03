@@ -1,4 +1,4 @@
-import {BiLogoGitlab, FiBookOpen, FiPieChart, MdOutlineThumbsUpDown, TbPresentation, FiPhone, FaAtom, TbUsersGroup,MdHourglassEmpty, LuCommand, BiAnalyse, FiBriefcase, FiTarget} from '../assets/icons/vander'
+import { BiAnalyse, BiLogoGitlab, FaAtom, FiBookOpen, FiBriefcase, FiPhone, FiPieChart, FiTarget, LuCommand, MdHourglassEmpty, MdOutlineThumbsUpDown, TbPresentation, TbUsersGroup } from '../assets/icons/vander';
 export const categories = [
     {
         title:'Business',
@@ -64,45 +64,46 @@ export const categories = [
 export const servicesdata = [
     {
         Icon: FiPhone,
-        title: '24/7 Support',
-        data: 'Many desktop publishing now use and a search for job'
+        title: '24/7 Assistance',
+        data: 'We provide round-the-clock support for employers and job seekers.'
     },
     {
         Icon: FaAtom,
-        title: 'Tech & Startup Jobs',
-        data: 'Many desktop publishing now use and a search for job'
+        title: 'Global Job Placement',
+        data: 'Connecting skilled workers with opportunities in top international markets.'
     },
     {
-        Icon:TbUsersGroup,
-        title: 'Quick & Easy',
-        data: 'Many desktop publishing now use and a search for job'
+        Icon: TbUsersGroup,
+        title: 'Trusted Recruitment',
+        data: 'We ensure a transparent and reliable hiring process for both clients and candidates.'
     },
     {
-        Icon:MdHourglassEmpty,
-        title: 'Save Time',
-        data: 'Many desktop publishing now use and a search for job'
+        Icon: MdHourglassEmpty,
+        title: 'Fast Processing',
+        data: 'Efficient visa and documentation processing for hassle-free deployment.'
     },
     {
         Icon: LuCommand,
-        title: 'Apply with confidence',
-        data: 'Many desktop publishing now use and a search for job'
+        title: 'Skilled Workforce',
+        data: 'Providing well-trained and experienced workers for various industries.'
     },
     {
         Icon: BiAnalyse,
-        title: 'Reduce Hiring Bias',
-        data: 'Many desktop publishing now use and a search for job'
+        title: 'Compliance & Verification',
+        data: 'Ensuring legal and ethical recruitment through proper documentation and screening.'
     },
     {
-        Icon:FiBriefcase,
-        title: 'Proactive Employers',
-        data: 'Many desktop publishing now use and a search for job'
+        Icon: FiBriefcase,
+        title: 'International Network',
+        data: 'Strong partnerships with companies in the Gulf, Europe, and Asia for global hiring.'
     },
     {
-        Icon:FiTarget,
-        title: 'No Missed Opportunities',
-        data: 'Many desktop publishing now use and a search for job'
+        Icon: FiTarget,
+        title: 'Successful Deployment',
+        data: 'Thousands of workers placed abroad with 100% client satisfaction.'
     },
-]
+];
+
 export const jobs = [
     {
         id:1,
@@ -402,24 +403,25 @@ export const featuredata = [
     {
         Icon: FiPhone,
         title: '24/7 Support',
-        data: 'Many desktop publishing now use and a search for job'
+        data: 'Dedicated assistance for job seekers and employers anytime, anywhere.'
     },
     {
         Icon: FaAtom,
-        title: 'Tech & Startup Jobs',
-        data: 'Many desktop publishing now use and a search for job'
+        title: 'International Job Placement',
+        data: 'Connecting skilled workers with top global employers across industries.'
     },
     {
         Icon: TbUsersGroup,
-        title: 'Quick & Easy',
-        data: 'Many desktop publishing now use and a search for job'
+        title: 'Hassle-Free Process',
+        data: 'Seamless recruitment with proper documentation and compliance.'
     },
     {
-        Icon:MdHourglassEmpty,
-        title: 'Save Time',
-        data: 'Many desktop publishing now use and a search for job'
+        Icon: MdHourglassEmpty,
+        title: 'Quick Deployment',
+        data: 'Efficient hiring process to ensure timely workforce mobilization.'
     },
 ];
+
 export   const newsData = [
         {
             id:1,

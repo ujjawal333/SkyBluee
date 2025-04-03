@@ -1,14 +1,13 @@
-import React from 'react'
 import Link from 'next/link';
 
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Switcher from '../components/Switcher';
-import Feature from '../components/Feature';
-import MillionsJob from '../components/Millions-job';
-import JobCounter from '../components/Job-counter';
-import QuesAnswer from '../components/Question-Answer';
 import ExploreJob from '../components/Explore-job';
+import Feature from '../components/Feature';
+import Footer from '../components/Footer';
+import JobCounter from '../components/Job-counter';
+import MillionsJob from '../components/Millions-job';
+import Navbar from '../components/Navbar';
+import QuesAnswer from '../components/Question-Answer';
+import Switcher from '../components/Switcher';
 import Cta from '../components/cta';
 
 export default function Aboutus() {
@@ -16,7 +15,7 @@ export default function Aboutus() {
         <>
             <Navbar navClass='justify-end nav-light' />
             <section className="relative table w-full py-36 bg-[url('/images/hero/bg.jpg')] bg-top bg-no-repeat bg-cover">
-                <div className="absolute inset-0 bg-emerald-900/90"></div>
+                <div className="absolute inset-0 bg-skyblue"></div>
                 <div className="container">
                     <div className="grid grid-cols-1 text-center mt-10">
                         <h3 className="md:text-3xl text-2xl md:leading-snug tracking-wide leading-snug font-medium text-white">About Us</h3>
