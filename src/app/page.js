@@ -17,12 +17,18 @@ import News from './components/News'
 import { categoriesData } from './components/Data'
 import Footer from './components/Footer'
 import Switcher from './components/Switcher'
+import SupportBar from './components/SupportBar'; 
 
 export default function Home() {
   return (
     <>
+ 
+
+<SupportBar />
+<div/>
     <Navbar navClass="justify-start" topnavClass="bg-white dark:bg-slate-900" />
 
+    
     <HeroTen/>
 
     <section className="relative md:py-24 py-16">

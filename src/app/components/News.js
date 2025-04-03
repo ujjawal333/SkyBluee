@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useRef, useEffect, useState } from "react";
@@ -151,9 +150,22 @@ const TestimonialCarousel = () => {
     // Handle form submission here
   };
 
+  // Add this effect to prevent body scrolling when modal is open
+  useEffect(() => {
+    if (isFeedbackOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isFeedbackOpen]);
+
   return (
     <section className="relative w-full px-4 sm:px-6 md:px-8 lg:px-8 xl:px-8 2xl:px-16 py-6 sm:py-8 lg:py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-full xl:max-w-[100rem] 2xl:max-w-[120rem] mx-auto relative z-100">
+      <div className="max-w-full xl:max-w-[100rem] 2xl:max-w-[120rem] mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -176,7 +188,7 @@ const TestimonialCarousel = () => {
 
           <button
             onClick={() => setIsFeedbackOpen(true)}
-            className="inline-flex items-center gap-2  bg-emerald-600  text-white px-6 py-3 rounded-full hover:bg-emerald-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-full hover:bg-emerald-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             <MessageSquarePlus className="w-5 h-5" />
             <span>Share Your Feedback</span>
@@ -205,7 +217,7 @@ const TestimonialCarousel = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   onClick={handleNext}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-100 bg-white/90 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300"
                 >
                   <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
                 </motion.button>
@@ -222,7 +234,7 @@ const TestimonialCarousel = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="h-full"
                 >
-                  <div className="h-full bg-white rounded-2xl  transition-all duration-500 hover:-translate-y-2">
+                  <div className="h-full bg-white rounded-2xl transition-all duration-500 hover:-translate-y-2">
                     <div className="p-4 sm:p-5 md:p-6 lg:p-7 relative">
                       <Quote className="absolute top-4 right-4 w-6 h-6 sm:w-8 sm:h-8 text-emerald-200 opacity-50" />
 
@@ -233,7 +245,7 @@ const TestimonialCarousel = () => {
                             alt={testimonial.name}
                             className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover ring-4 ring-emerald-100"
                           />
-                          <div className="absolute -bottom-2 -right-2  bg-emerald-600  text-white p-1 rounded-full">
+                          <div className="absolute -bottom-2 -right-2 bg-emerald-600 text-white p-1 rounded-full">
                             <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
                           </div>
                         </div>
@@ -268,23 +280,24 @@ const TestimonialCarousel = () => {
         </div>
       </div>
 
-      {/* Improved Feedback Form Modal */}
+      {/* Fixed Feedback Form Modal */}
       <AnimatePresence>
         {isFeedbackOpen && (
-          <>
+          <div className="fixed inset-0 flex items-center justify-center z-[9999]">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-500"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm"
               onClick={() => setIsFeedbackOpen(false)}
             />
             <motion.div
-              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-lg max-h-[90vh] overflow-y-auto z-500"
+              className="w-[95%] max-w-lg max-h-[90vh] overflow-y-auto z-[10000] relative"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", duration: 0.5 }}
+              onClick={(e) => e.stopPropagation()}
             >
               <div className="bg-white rounded-xl shadow-xl overflow-hidden">
                 <div className="relative bg-emerald-600 px-6 py-4">
@@ -428,7 +441,7 @@ const TestimonialCarousel = () => {
                 </form>
               </div>
             </motion.div>
-          </>
+          </div>
         )}
       </AnimatePresence>
 
