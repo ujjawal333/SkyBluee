@@ -20,16 +20,26 @@ export default function CategoriesFaq() {
 
     const accordionData = [
         {
-            title: 'How does it work ?',
-            content: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.'
+            title: 'How does your recruitment process work?',
+            content: 'We provide a comprehensive recruitment service by first understanding your company and role requirements. We then create a tailored recruitment strategy using direct outreach, job boards, and digital channels to find qualified candidates. Our process covers everything from initial screening and interviewing to final onboarding and training, making your recruitment as smooth and stress-free as possible.'
         },
         {
-            title: 'Do I need a designer to use Jobstack ?',
-            content: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.'
+            title: 'Which countries do you provide recruitment services from?',
+            content: 'We have joint ventures with 6 countries: Nepal, India, Bangladesh, Pakistan, Sri Lanka, Indonesia, and Philippines. Through our sister companies located in these countries, we can provide workers of these nationalities through Sky Blue and team.'
         },
         {
-            title: 'What do I need to do to start selling ?',
-            content: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.'
+            title: 'What is your document attestation service?',
+            content: 'We handle document attestation at Nepal Embassy in Riyadh and Jeddah. Our service involves legally verifying the authenticity and accuracy of your documents. You won\'t need to visit the embassy as we have representatives present in both locations. Your company will be responsible for paying the embassy fee and any other outstanding fees.'
+        },
+            
+         
+        {
+            title: 'Which sectors do you specialize in?',
+            content: 'We excel in multiple sectors including Construction, Account & Finance, Oil & Gas, Healthcare (Doctors & Nurses), Heavy Equipment Operations, Automobile Industries, Airline Industries, Transportation, IT Industries, Mall & Warehouse, Agriculture, Hospitality, Telecom, and Operation & Maintenance.'
+        },
+        {
+            title: 'How do you handle visa services for workers?',
+            content: 'Our visa service facilitates the application and approval process for travelers. We help complete necessary paperwork, review documents, handle fee payments, and apply for visas. We also provide guidance throughout the visa process and assistance during the duration of stay.'
         }
     ]
 
@@ -63,7 +73,7 @@ export default function CategoriesFaq() {
                         {accordionData.map((item, index) => (
                             <div key={index} className={`relative shadow dark:shadow-gray-700 rounded-md overflow-hidden mt-4`}>
                                 <h2 className="text-base font-medium">
-                                    <button onClick={() => toggleAccordion(index)} type="button" className={`flex justify-between items-center p-5 w-full font-medium text-left ${activeIndex === index ? 'text-emerald-500 bg-gray-50 dark:bg-slate-800' : ''} `} data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
+                                    <button onClick={() => toggleAccordion(index)} type="button" className={`flex justify-between items-center p-5 w-full font-medium text-left ${activeIndex === index ? 'text-skyblue bg-gray-50 dark:bg-slate-800' : ''} `} data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
                                         <span>{item.title}</span>
                                         <svg data-accordion-icon className={`size-4 shrink-0 ${activeIndex === index ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>

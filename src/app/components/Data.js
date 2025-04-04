@@ -1,4 +1,5 @@
-import { BiAnalyse, BiLogoGitlab, FaAtom, FiBookOpen, FiBriefcase, FiPhone, FiPieChart, FiTarget, LuCommand, MdHourglassEmpty, MdOutlineThumbsUpDown, TbPresentation, TbUsersGroup } from '../assets/icons/vander';
+import { FiCreditCard, FiFileText, FiGlobe } from "react-icons/fi";
+import { BiAnalyse, BiLogoGitlab, FaAtom, FiBookOpen, FiBriefcase, FiPhone, FiPieChart, MdHourglassEmpty, MdOutlineThumbsUpDown, TbPresentation, TbUsersGroup } from '../assets/icons/vander';
 export const categories = [
     {
         title:'Business',
@@ -63,44 +64,44 @@ export const categories = [
 ]
 export const servicesdata = [
     {
-        Icon: FiPhone,
-        title: '24/7 Assistance',
-        data: 'We provide round-the-clock support for employers and job seekers.'
-    },
-    {
-        Icon: FaAtom,
-        title: 'Global Job Placement',
-        data: 'Connecting skilled workers with opportunities in top international markets.'
+        Icon: FiFileText,
+        title: 'Document Attestation',
+        data: 'Legal verification of document authenticity at Nepal Embassy with our representatives in both Riyadh and Jeddah.'
     },
     {
         Icon: TbUsersGroup,
-        title: 'Trusted Recruitment',
-        data: 'We ensure a transparent and reliable hiring process for both clients and candidates.'
+        title: 'Recruitment Services',
+        data: 'Joint venture with 6 countries: Nepal, India, Bangladesh, Pakistan, Sri Lanka, Indonesia, and Philippines.'
+    },
+    {
+        Icon: FiGlobe,
+        title: 'Visa Servicing',
+        data: 'Complete assistance with visa application, paperwork, document review, and process guidance for travelers.'
+    },
+    {
+        Icon: FiCreditCard,
+        title: 'Passport Immigration',
+        data: 'Support for authorized government documents and verification for skilled candidates looking to work abroad.'
+    },
+    {
+        Icon: FiPhone,
+        title: '24/7 Assistance',
+        data: 'Round-the-clock support for employers and candidates throughout the recruitment process.'
+    },
+    {
+        Icon: FiBriefcase,
+        title: 'International Network',
+        data: 'Strong partnerships with companies across multiple countries for global hiring opportunities.'
     },
     {
         Icon: MdHourglassEmpty,
         title: 'Fast Processing',
-        data: 'Efficient visa and documentation processing for hassle-free deployment.'
-    },
-    {
-        Icon: LuCommand,
-        title: 'Skilled Workforce',
-        data: 'Providing well-trained and experienced workers for various industries.'
+        data: 'Efficient documentation and embassy coordination for hassle-free verification and deployment.'
     },
     {
         Icon: BiAnalyse,
         title: 'Compliance & Verification',
         data: 'Ensuring legal and ethical recruitment through proper documentation and screening.'
-    },
-    {
-        Icon: FiBriefcase,
-        title: 'International Network',
-        data: 'Strong partnerships with companies in the Gulf, Europe, and Asia for global hiring.'
-    },
-    {
-        Icon: FiTarget,
-        title: 'Successful Deployment',
-        data: 'Thousands of workers placed abroad with 100% client satisfaction.'
     },
 ];
 

@@ -10,8 +10,8 @@ export default function JobCounter() {
                     <h1 className="lg:text-5xl text-4xl font-semibold mb-2 dark:text-white">
                         <CountUp
                             start={0}
-                            end={154800}
-                            duration={3} />K+</h1>
+                            end={10000}
+                            duration={2} />K+</h1>
                     <h5 className="counter-head text-sm font-semibold text-slate-400 uppercase">Job Fulfillment</h5>
                 </div>
 
