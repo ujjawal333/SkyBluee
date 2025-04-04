@@ -7,6 +7,7 @@ import Switcher from '../components/Switcher';
 import ServicesComp from '../components/services-comp';
 
 import CategoriesFaq from '../components/categories-faq';
+import ApplyForJobs from '../components/applyforjob';
 
 
 export default function Services() {
@@ -42,7 +43,7 @@ export default function Services() {
                     <CategoriesFaq/>
                 </div>
 
-            <ExploreJob/>
+           <ApplyForJobs/>
             </section>
 
             <Footer />
