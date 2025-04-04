@@ -1,16 +1,15 @@
-import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
-import Navbar from './components/Navbar'
-import HeroTen from './components/hero-ten'
 import About from './components/about'
-import Popularjobstwo from './components/Popular-Jobs-two';
+import HeroTen from './components/hero-ten'
+import Navbar from './components/Navbar'
+import Popularjobstwo from './components/Popular-Jobs-two'
 
-import Cta from './components/cta';
+import Cta from './components/cta'
 
+import BestCompanies from './components/Best-companies'
 import Counter from './components/counter'
-import BestCompanies from './components/Best-companies';
 
 import News from './components/News'
 
@@ -36,7 +35,7 @@ export default function Home() {
             <div className="grid grid-cols-1 pb-8 text-center">
                 <h3 className="mb-4 md:text-[26px] md:leading-normal text-2xl leading-normal font-semibold">Popular Categories</h3>
 
-                <p className="text-slate-400 max-w-xl mx-auto">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+                <p className="text-slate-400 max-w-xl mx-auto">Search all the open positions with SkyBlue HR. Get your own personalized salary estimate. Read reviews on over 65+ companies worldwide.</p>
             </div>
 
             <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 mt-8 gap-4">

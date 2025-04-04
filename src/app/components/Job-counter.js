@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import CountUp from 'react-countup';
 
 export default function JobCounter() {
@@ -10,9 +9,9 @@ export default function JobCounter() {
                 <div className="counter-box text-center">
                     <h1 className="lg:text-5xl text-4xl font-semibold mb-2 dark:text-white">
                         <CountUp
-                            start={1010}
-                            end={1548}
-                            duration={3} />K+</h1>
+                            start={0}
+                            end={10000}
+                            duration={2} />K+</h1>
                     <h5 className="counter-head text-sm font-semibold text-slate-400 uppercase">Job Fulfillment</h5>
                 </div>
 

@@ -1,4 +1,5 @@
-import {BiLogoGitlab, FiBookOpen, FiPieChart, MdOutlineThumbsUpDown, TbPresentation, FiPhone, FaAtom, TbUsersGroup,MdHourglassEmpty, LuCommand, BiAnalyse, FiBriefcase, FiTarget} from '../assets/icons/vander'
+import { FiCreditCard, FiFileText, FiGlobe } from "react-icons/fi";
+import { BiAnalyse, BiLogoGitlab, FaAtom, FiBookOpen, FiBriefcase, FiPhone, FiPieChart, MdHourglassEmpty, MdOutlineThumbsUpDown, TbPresentation, TbUsersGroup } from '../assets/icons/vander';
 export const categories = [
     {
         title:'Business',
@@ -63,46 +64,47 @@ export const categories = [
 ]
 export const servicesdata = [
     {
+        Icon: FiFileText,
+        title: 'Document Attestation',
+        data: 'Legal verification of document authenticity at Nepal Embassy with our representatives in both Riyadh and Jeddah.'
+    },
+    {
+        Icon: TbUsersGroup,
+        title: 'Recruitment Services',
+        data: 'Joint venture with 6 countries: Nepal, India, Bangladesh, Pakistan, Sri Lanka, Indonesia, and Philippines.'
+    },
+    {
+        Icon: FiGlobe,
+        title: 'Visa Servicing',
+        data: 'Complete assistance with visa application, paperwork, document review, and process guidance for travelers.'
+    },
+    {
+        Icon: FiCreditCard,
+        title: 'Passport Immigration',
+        data: 'Support for authorized government documents and verification for skilled candidates looking to work abroad.'
+    },
+    {
         Icon: FiPhone,
-        title: '24/7 Support',
-        data: 'Many desktop publishing now use and a search for job'
+        title: '24/7 Assistance',
+        data: 'Round-the-clock support for employers and candidates throughout the recruitment process.'
     },
     {
-        Icon: FaAtom,
-        title: 'Tech & Startup Jobs',
-        data: 'Many desktop publishing now use and a search for job'
+        Icon: FiBriefcase,
+        title: 'International Network',
+        data: 'Strong partnerships with companies across multiple countries for global hiring opportunities.'
     },
     {
-        Icon:TbUsersGroup,
-        title: 'Quick & Easy',
-        data: 'Many desktop publishing now use and a search for job'
-    },
-    {
-        Icon:MdHourglassEmpty,
-        title: 'Save Time',
-        data: 'Many desktop publishing now use and a search for job'
-    },
-    {
-        Icon: LuCommand,
-        title: 'Apply with confidence',
-        data: 'Many desktop publishing now use and a search for job'
+        Icon: MdHourglassEmpty,
+        title: 'Fast Processing',
+        data: 'Efficient documentation and embassy coordination for hassle-free verification and deployment.'
     },
     {
         Icon: BiAnalyse,
-        title: 'Reduce Hiring Bias',
-        data: 'Many desktop publishing now use and a search for job'
+        title: 'Compliance & Verification',
+        data: 'Ensuring legal and ethical recruitment through proper documentation and screening.'
     },
-    {
-        Icon:FiBriefcase,
-        title: 'Proactive Employers',
-        data: 'Many desktop publishing now use and a search for job'
-    },
-    {
-        Icon:FiTarget,
-        title: 'No Missed Opportunities',
-        data: 'Many desktop publishing now use and a search for job'
-    },
-]
+];
+
 export const jobs = [
     {
         id:1,
@@ -402,24 +404,25 @@ export const featuredata = [
     {
         Icon: FiPhone,
         title: '24/7 Support',
-        data: 'Many desktop publishing now use and a search for job'
+        data: 'Dedicated assistance for job seekers and employers anytime, anywhere.'
     },
     {
         Icon: FaAtom,
-        title: 'Tech & Startup Jobs',
-        data: 'Many desktop publishing now use and a search for job'
+        title: 'International Job Placement',
+        data: 'Connecting skilled workers with top global employers across industries.'
     },
     {
         Icon: TbUsersGroup,
-        title: 'Quick & Easy',
-        data: 'Many desktop publishing now use and a search for job'
+        title: 'Hassle-Free Process',
+        data: 'Seamless recruitment with proper documentation and compliance.'
     },
     {
-        Icon:MdHourglassEmpty,
-        title: 'Save Time',
-        data: 'Many desktop publishing now use and a search for job'
+        Icon: MdHourglassEmpty,
+        title: 'Quick Deployment',
+        data: 'Efficient hiring process to ensure timely workforce mobilization.'
     },
 ];
+
 export   const newsData = [
         {
             id:1,

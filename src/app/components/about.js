@@ -1,12 +1,12 @@
 'use client'
-import React,{useState} from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import ModalVideo from 'react-modal-video'
+import ModalVideo from 'react-modal-video';
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 
-import { MdOutlineCheckCircleOutline, FiMail} from '../assets/icons/vander'
+import { FiMail, MdOutlineCheckCircleOutline } from '../assets/icons/vander';
 
 export default function About() {
     const [isOpen, setOpen] = useState(false)
@@ -42,7 +42,7 @@ export default function About() {
                 <div className="lg:ms-8">
                     <h3 className="mb-6 md:text-4xl text-3xl md:leading-normal leading-normal font-bold">Get the job of you dreams <br /> quick & easy.</h3>
 
-                    <p className="text-slate-400 max-w-xl">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+                    <p className="text-slate-400 max-w-xl">Search all the open positions with SkyBlue HR. Get your own personalized salary estimate. Read reviews on over 65+ companies worldwide.</p>
 
                     <ul className="list-none text-slate-400 mt-4">
                         <li className="mb-1 flex items-center ms-0"><MdOutlineCheckCircleOutline className="text-emerald-600 text-xl me-2"/> Digital Marketing Solutions for Tomorrow</li>

@@ -1,12 +1,12 @@
 'use client'
-import React,{useState} from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import ModalVideo from 'react-modal-video'
+import ModalVideo from 'react-modal-video';
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 
-import {MdOutlineCheckCircleOutline} from '../assets/icons/vander'
+import { MdOutlineCheckCircleOutline } from '../assets/icons/vander';
 
 export default function Cta() {
     const [isOpen, setOpen] = useState(false)
@@ -28,7 +28,7 @@ export default function Cta() {
                 <div className="text-white p-4">
                     <h4 className="leading-normal text-4xl mb-3 font-semibold">Get the job of your <br /> dreams quickly.</h4>
 
-                    <p className="text-white/70 text-lg max-w-xl">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+                    <p className="text-white/70 text-lg max-w-xl">Search all the open positions with SkyBlue HR. Get your own personalized salary estimate. Read reviews on over 65+ companies worldwide.</p>
 
                     <ul className="list-none text-white/50 mt-4">
                         <li className="mb-1 flex items-center ms-0"><MdOutlineCheckCircleOutline className="text-white text-xl me-2"/> Digital Marketing Solutions for Tomorrow</li>
