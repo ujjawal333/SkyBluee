@@ -9,13 +9,14 @@ import Navbar from '../components/Navbar';
 import QuesAnswer from '../components/Question-Answer';
 import Switcher from '../components/Switcher';
 import Cta from '../components/cta';
+import ApplyForJobs from '../components/applyforjob';
 
 export default function Aboutus() {
     return (
         <>
             <Navbar navClass='justify-end nav-light' />
             <section className="relative table w-full py-36 bg-[url('/images/hero/bg.jpg')] bg-top bg-no-repeat bg-cover">
-                <div className="absolute inset-0 bg-skyblue"></div>
+                <div className="absolute inset-0 bg-skyblue opacity-60"></div>
                 <div className="container">
                     <div className="grid grid-cols-1 text-center mt-10">
                         <h3 className="md:text-3xl text-2xl md:leading-snug tracking-wide leading-snug font-medium text-white">About Us</h3>
@@ -25,7 +26,7 @@ export default function Aboutus() {
 
                 <div className="absolute text-center z-10 bottom-5 start-0 end-0 mx-3">
                     <ul className="breadcrumb tracking-[0.5px] breadcrumb-light mb-0 inline-block">
-                        <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white/50 hover:text-white"><Link href="/">Jobstack</Link></li>
+                        <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white/50 hover:text-white"><Link href="/">Sky Blue Hr Solutions Pvt.Ltd</Link></li>
                         <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white" aria-current="page">About Us</li>
                     </ul>
                 </div>
@@ -52,7 +53,7 @@ export default function Aboutus() {
                     <JobCounter />
                 </div>
                 <QuesAnswer />
-                <ExploreJob />
+                <ApplyForJobs/>
             </section>
             <Footer />
             <Switcher/>

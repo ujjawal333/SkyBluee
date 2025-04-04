@@ -187,30 +187,12 @@ export default function Navbar(props) {
                         </li>
 
                         <li className={`has-submenu parent-parent-menu-item ${["/aboutus","/services","/pricing","/employers-item", "/employer-list", "/employer-profile","/candidates-item", "/candidate-list", "/candidate-profile","/candidate-profile-setting","/help-item", "/helpcenter-overview", "/helpcenter-faqs","/helpcenter-guides","/helpcenter-support","/blog-item", "/blogs", "/blog-detail","/auth-item", "/login", "/signup","/reset-password","/lock-screen","/utility-item", "/terms", "/privacy","/special-item", "/comingsoon", "/maintenance","/error","/thankyou"].includes(manu) ? 'active' : ''}`}>
-                            <Link href="#" onClick={(e)=>{setSubManu(subManu === "/page-item" ? "" : "/page-item")}}>Pages</Link><span className="menu-arrow"></span>
+                            <Link href="#" onClick={(e)=>{setSubManu(subManu === "/page-item" ? "" : "/page-item")}}>Who are we? Click to find out!</Link><span className="menu-arrow"></span>
                             <ul className={`submenu ${["/aboutus","/services","/pricing","/employers-item", "/employer-list", "/employer-profile","/candidates-item", "/candidate-list", "/candidate-profile","/candidate-profile-setting","/help-item", "/helpcenter-overview", "/helpcenter-faqs","/helpcenter-guides","/helpcenter-support","/blog-item", "/blogs", "/blog-detail","/auth-item", "/login", "/signup","/reset-password","/lock-screen","/utility-item", "/terms", "/privacy","/special-item", "/comingsoon", "/maintenance","/error","/thankyou"].includes(subManu) ? 'open' : ''}`}>
                                 <li className={manu ===  "/aboutus" ? 'active' : '' }><Link href="/aboutus" className="sub-menu-item">About Us</Link></li>
                                 <li className={manu ===  "/services" ? 'active' : '' }><Link href="/services" className="sub-menu-item">Services</Link></li>
-                                <li className={manu ===  "/pricing" ? 'active' : '' }><Link href="/pricing" className="sub-menu-item">Pricing </Link></li>
 
-                                <li className={`has-submenu parent-menu-item ${["/employers-item", "/employer-list", "/employer-profile"].includes(manu) ? 'active' : ''}`}>
-                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/employers-item" ? "" : "/employers-item")}}>Employers</Link><span className="submenu-arrow"></span>
-                                    <ul className={`submenu ${["/employers-item", "/employer-list", "/employer-profile"].includes(subManu) ? 'open' : ''}`}>
-                                        <li className={manu ===  "/employer-list" ? 'active' : '' }><Link href="/employer-list" className="sub-menu-item">Employers</Link></li>
-                                        <li className={manu ===  "/employer-profile" ? 'active' : '' }><Link href="/employer-profile" className="sub-menu-item">Employer Detail</Link></li>
-                                    </ul>
-                                </li>
-
-                                <li className={`has-submenu parent-menu-item ${["/candidates-item", "/candidate-list", "/candidate-profile","/candidate-profile-setting"].includes(manu) ? 'active' : ''}`}>
-                                    <Link href="#" onClick={(e)=>{setSubManu(subManu === "/candidates-item" ? "" : "/candidates-item")}}>Candidates </Link><span className="submenu-arrow"></span>
-                                    <ul className={`submenu ${["/candidates-item", "/candidate-list", "/candidate-profile","/candidate-profile-setting"].includes(subManu) ? 'open' : ''}`}>
-                                        <li className={manu ===  "/candidate-list" ? 'active' : '' }><Link href="/candidate-list" className="sub-menu-item">Candidates</Link></li>
-                                        <li className={manu ===  "/candidate-profile" ? 'active' : '' }><Link href="/candidate-profile" className="sub-menu-item">Candidate Profile</Link></li>
-                                        <li className={manu ===  "/candidate-profile-setting" ? 'active' : '' }><Link href="/candidate-profile-setting" className="sub-menu-item">Profile Setting </Link></li>
-                                    </ul>
-                                </li>
-
-                                <li className={`has-submenu parent-menu-item ${["/help-item", "/helpcenter-overview", "/helpcenter-faqs","/helpcenter-guides","/helpcenter-support"].includes(manu) ? 'active' : ''}`}>
+                                {/* <li className={`has-submenu parent-menu-item ${["/help-item", "/helpcenter-overview", "/helpcenter-faqs","/helpcenter-guides","/helpcenter-support"].includes(manu) ? 'active' : ''}`}>
                                     <Link href="#" onClick={(e)=>{setSubManu(subManu === "/help-item" ? "" : "/help-item")}}> Helpcenter </Link><span className="submenu-arrow"></span>
                                     <ul className={`submenu ${["/help-item", "/helpcenter-overview", "/helpcenter-faqs","/helpcenter-guides","/helpcenter-support"].includes(subManu) ? 'open' : ''}`}>
                                         <li className={manu ===  "/helpcenter-overview" ? 'active' : '' }><Link href="/helpcenter-overview" className="sub-menu-item">Overview</Link></li>
@@ -218,25 +200,25 @@ export default function Navbar(props) {
                                         <li className={manu ===  "/helpcenter-guides" ? 'active' : '' }><Link href="/helpcenter-guides" className="sub-menu-item">Guides</Link></li>
                                         <li className={manu ===  "/helpcenter-support" ? 'active' : '' }><Link href="/helpcenter-support" className="sub-menu-item">Support</Link></li>
                                     </ul>
-                                </li>
+                                </li> */}
 
-                                <li className={`has-submenu parent-menu-item ${["/blog-item", "/blogs", "/blog-detail"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/blog-item" ? "" : "/blog-item")}}> Blog </Link><span className="submenu-arrow"></span>
+                                {/* <li className={`has-submenu parent-menu-item ${["/blog-item", "/blogs", "/blog-detail"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/blog-item" ? "" : "/blog-item")}}> Blog </Link><span className="submenu-arrow"></span>
                                     <ul className={`submenu ${["/blog-item", "/blogs", "/blog-detail"].includes(subManu) ? 'open' : ''}`}>
                                         <li className={manu ===  "/blogs" ? 'active' : '' }><Link href="/blogs" className="sub-menu-item"> Blogs</Link></li>
                                         <li className={manu ===  "/blog-detail" ? 'active' : '' }><Link href="/blog-detail" className="sub-menu-item"> Blog Detail</Link></li>
                                     </ul>
-                                </li>
+                                </li> */}
 
-                                <li className={`has-submenu parent-menu-item ${["/auth-item", "/login", "/signup","/reset-password","/lock-screen"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/auth-item" ? "" : "/auth-item")}}> Auth Pages </Link><span className="submenu-arrow"></span>
+                                {/* <li className={`has-submenu parent-menu-item ${["/auth-item", "/login", "/signup","/reset-password","/lock-screen"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/auth-item" ? "" : "/auth-item")}}> Auth Pages </Link><span className="submenu-arrow"></span>
                                     <ul className={`submenu ${["/auth-item", "/login", "/signup","/reset-password","/lock-screen"].includes(subManu) ? 'open' : ''}`}>
                                         <li className={manu ===  "/login" ? 'active' : '' }><Link href="/login" className="sub-menu-item"> Login</Link></li>
                                         <li className={manu ===  "/signup" ? 'active' : '' }><Link href="/signup" className="sub-menu-item"> Signup</Link></li>
                                         <li className={manu ===  "/reset-password" ? 'active' : '' }><Link href="/reset-password" className="sub-menu-item"> Forgot Password</Link></li>
                                         <li className={manu ===  "/lock-screen" ? 'active' : '' }><Link href="/lock-screen" className="sub-menu-item"> Lock Screen</Link></li>
                                     </ul>
-                                </li>
+                                </li> */}
 
-                                <li className={`has-submenu parent-menu-item ${["/utility-item", "/terms", "/privacy"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/utility-item" ? "" : "/utility-item")}}> Utility </Link><span className="submenu-arrow"></span>
+                                {/* <li className={`has-submenu parent-menu-item ${["/utility-item", "/terms", "/privacy"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={(e)=>{setSubManu(subManu === "/utility-item" ? "" : "/utility-item")}}> Utility </Link><span className="submenu-arrow"></span>
                                     <ul className={`submenu ${["/utility-item", "/terms", "/privacy"].includes(subManu) ? 'open' : ''}`}>
                                         <li className={manu ===  "/terms" ? 'active' : '' }><Link href="/terms" className="sub-menu-item">Terms of Services</Link></li>
                                         <li className={manu ===  "/privacy" ? 'active' : '' }><Link href="/privacy" className="sub-menu-item">Privacy Policy</Link></li>
@@ -250,7 +232,7 @@ export default function Navbar(props) {
                                         <li className={manu ===  "/error" ? 'active' : '' }><Link href="/error" className="sub-menu-item"> 404!</Link></li>
                                         <li className={manu ===  "/thankyou" ? 'active' : '' }><Link href="/thankyou" className="sub-menu-item"> Thank you</Link></li>
                                     </ul>
-                                </li>
+                                </li> */}
                             </ul>
                         </li>
 
