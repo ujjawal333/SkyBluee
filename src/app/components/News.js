@@ -164,7 +164,7 @@ const TestimonialCarousel = () => {
   }, [isFeedbackOpen]);
 
   return (
-    <section className="relative w-full px-4 sm:px-6 md:px-8 lg:px-8 xl:px-8 2xl:px-16 py-6 sm:py-8 lg:py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50">
+    <section className="relative w-full px-4 sm:px-6 md:px-8 lg:px-8 xl:px-8 2xl:px-16 py-6 sm:py-8 lg:py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-full xl:max-w-[100rem] 2xl:max-w-[120rem] mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -173,22 +173,22 @@ const TestimonialCarousel = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20"
         >
-          <h3 className="text-emerald-600 font-medium text-base sm:text-lg font-Urbanist mb-2">
+          <h3 className="text-emerald-600 dark:text-emerald-400 font-medium text-base sm:text-lg font-Urbanist mb-2">
             candidates Testimonials
           </h3>
           
-          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 mb-5 font-CanelaDeck leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-5 font-CanelaDeck leading-tight">
             What Our candidates Say
           </h2>
           
-          <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-xl text-gray-600 max-w-2xl mx-auto font-GTAmerican mb-6">
+          <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-GTAmerican mb-6">
             Join thousands of successful students who have transformed their
             careers through our platform
           </p>
 
           <button
             onClick={() => setIsFeedbackOpen(true)}
-            className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-full hover:bg-emerald-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 bg-emerald-600 dark:bg-emerald-500 text-white px-6 py-3 rounded-full hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-colors duration-300 shadow-lg hover:shadow-xl dark:shadow-emerald-900/10"
           >
             <MessageSquarePlus className="w-5 h-5" />
             <span>Share Your Feedback</span>
@@ -208,18 +208,18 @@ const TestimonialCarousel = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
                   onClick={handlePrev}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:bg-white dark:hover:bg-slate-700 transition-all duration-300"
                 >
-                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
+                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300" />
                 </motion.button>
                 <motion.button
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   onClick={handleNext}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:bg-white dark:hover:bg-slate-700 transition-all duration-300"
                 >
-                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
+                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300" />
                 </motion.button>
               </>
             )}
@@ -234,32 +234,32 @@ const TestimonialCarousel = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="h-full"
                 >
-                  <div className="h-full bg-white rounded-2xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="h-full bg-white dark:bg-slate-800 rounded-2xl transition-all duration-500 hover:-translate-y-2 shadow-md dark:shadow-slate-900/20">
                     <div className="p-4 sm:p-5 md:p-6 lg:p-7 relative">
-                      <Quote className="absolute top-4 right-4 w-6 h-6 sm:w-8 sm:h-8 text-emerald-200 opacity-50" />
+                      <Quote className="absolute top-4 right-4 w-6 h-6 sm:w-8 sm:h-8 text-emerald-200 dark:text-emerald-900/50 opacity-50" />
 
                       <div className="flex items-center mb-4 sm:mb-6">
                         <div className="relative">
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
-                            className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover ring-4 ring-emerald-100"
+                            className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover ring-4 ring-emerald-100 dark:ring-emerald-900/30"
                           />
-                          <div className="absolute -bottom-2 -right-2 bg-emerald-600 text-white p-1 rounded-full">
+                          <div className="absolute -bottom-2 -right-2 bg-emerald-600 dark:bg-emerald-500 text-white p-1 rounded-full">
                             <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
                           </div>
                         </div>
                         <div className="ml-4">
-                          <h3 className="text-lg sm:text-xl font-semibold font-Urbanist text-gray-900">
+                          <h3 className="text-lg sm:text-xl font-semibold font-Urbanist text-gray-900 dark:text-white">
                             {testimonial.name}
                           </h3>
-                          <p className="text-emerald-600 text-sm sm:text-base font-Urbanist font-medium">
+                          <p className="text-emerald-600 dark:text-emerald-400 text-sm sm:text-base font-Urbanist font-medium">
                             {testimonial.role}
                           </p>
                         </div>
                       </div>
 
-                      <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 sm:mb-6 font-GTAmerican">
+                      <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6 font-GTAmerican">
                         "{testimonial.content}"
                       </p>
 
@@ -299,8 +299,8 @@ const TestimonialCarousel = () => {
               transition={{ type: "spring", duration: 0.5 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="bg-white rounded-xl shadow-xl overflow-hidden">
-                <div className="relative bg-emerald-600 px-6 py-4">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl overflow-hidden">
+                <div className="relative bg-emerald-600 dark:bg-emerald-700 px-6 py-4">
                   <button
                     onClick={() => setIsFeedbackOpen(false)}
                     className="absolute right-4 top-4 text-white/80 hover:text-white transition-colors"
@@ -313,7 +313,7 @@ const TestimonialCarousel = () => {
 
                 <form onSubmit={handleSubmit} className="p-5">
                   <div className="mb-5">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       How would you rate your experience?
                     </label>
                     <div className="flex justify-center sm:justify-start gap-3">
@@ -330,7 +330,7 @@ const TestimonialCarousel = () => {
                             className={`w-7 h-7 sm:w-8 sm:h-8 ${
                               star <= (hoveredStar || rating)
                                 ? "fill-yellow-400 text-yellow-400"
-                                : "text-gray-300"
+                                : "text-gray-300 dark:text-gray-600"
                             }`}
                           />
                         </button>
@@ -339,32 +339,32 @@ const TestimonialCarousel = () => {
                   </div>
 
                   <div className="mb-4">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Your Name
                     </label>
                     <input
                       type="text"
                       id="name"
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-shadow"
+                      className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 focus:border-transparent outline-none transition-shadow bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                       placeholder="Enter your name"
                     />
                   </div>
 
                   <div className="mb-4">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Email Address
                     </label>
                     <input
                       type="email"
                       id="email"
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-shadow"
+                      className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 focus:border-transparent outline-none transition-shadow bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                       placeholder="Enter your email"
                     />
                   </div>
 
                   {/* Improved Image Upload Section */}
                   <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Upload Image
                     </label>
                     <input
@@ -378,13 +378,13 @@ const TestimonialCarousel = () => {
                     {!previewUrl ? (
                       <div 
                         onClick={triggerFileInput}
-                        className="border-2 border-dashed border-gray-300 rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-emerald-500 transition-colors"
+                        className="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-emerald-500 dark:hover:border-emerald-400 transition-colors bg-white dark:bg-slate-700"
                       >
-                        <div className="bg-emerald-100 p-3 rounded-full">
-                          <Upload className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
+                        <div className="bg-emerald-100 dark:bg-emerald-900/30 p-3 rounded-full">
+                          <Upload className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600 dark:text-emerald-400" />
                         </div>
-                        <p className="text-sm text-gray-700 font-medium text-center">Click to upload an image</p>
-                        <p className="text-xs text-gray-500 text-center">JPG, PNG, GIF up to 10MB</p>
+                        <p className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center">Click to upload an image</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 text-center">JPG, PNG, GIF up to 10MB</p>
                       </div>
                     ) : (
                       <div className="relative rounded-lg overflow-hidden">
@@ -398,42 +398,42 @@ const TestimonialCarousel = () => {
                             <button
                               type="button"
                               onClick={triggerFileInput}
-                              className="bg-white p-2 rounded-full shadow-md hover:bg-emerald-50 transition-colors"
+                              className="bg-white dark:bg-slate-800 p-2 rounded-full shadow-md hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors"
                             >
-                              <Camera className="w-5 h-5 text-emerald-600" />
+                              <Camera className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                             </button>
                             <button
                               type="button"
                               onClick={removeImage}
-                              className="bg-white p-2 rounded-full shadow-md hover:bg-red-50 transition-colors"
+                              className="bg-white dark:bg-slate-800 p-2 rounded-full shadow-md hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                             >
-                              <Trash2 className="w-5 h-5 text-red-600" />
+                              <Trash2 className="w-5 h-5 text-red-600 dark:text-red-400" />
                             </button>
                           </div>
                         </div>
                       </div>
                     )}
                     
-                    <p className="mt-2 text-xs text-gray-500 text-center sm:text-left">
+                    <p className="mt-2 text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left">
                       Add an image to provide visual context to your feedback
                     </p>
                   </div>
 
                   <div className="mb-5">
-                    <label htmlFor="feedback" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="feedback" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Your Feedback
                     </label>
                     <textarea
                       id="feedback"
                       rows={4}
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-shadow resize-none"
+                      className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 focus:border-transparent outline-none transition-shadow resize-none bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                       placeholder="Share your thoughts and suggestions..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-emerald-600 text-white py-3 rounded-lg font-medium hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2 group"
+                    className="w-full bg-emerald-600 dark:bg-emerald-500 text-white py-3 rounded-lg font-medium hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2 group"
                   >
                     <Send className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                     Submit Feedback

@@ -8,7 +8,7 @@ import MillionsJob from '../components/Millions-job';
 import Navbar from '../components/Navbar';
 import QuesAnswer from '../components/Question-Answer';
 import Switcher from '../components/Switcher';
-import Cta from '../components/cta';
+import Cta from '../components/aboutusvideo';
 import ApplyForJobs from '../components/applyforjob';
 
 export default function Aboutus() {
@@ -39,19 +39,21 @@ export default function Aboutus() {
                 </div>
             </div>
             <section className="relative md:py-24 py-16">
-                <div className="container md:pb-16">
+                
                     <MillionsJob />
-                </div>
-
-                <Feature />
-                <div className="container md:mt-24 mt-16">
-                    <div className="grid grid-cols-1">
-                        <Cta/>
-                    </div>
-                </div>
-                <div className="container md:mt-24 mt-16">
+                    <div className="container md:mt-24 mt-16">
                     <JobCounter />
                 </div>
+               <Cta/>
+                <div className="container ">
+                    <div className="grid grid-cols-1">
+                    
+                        <Feature />
+                    </div>
+                </div>
+                {/* <div className="container md:mt-24 mt-16">
+                    <JobCounter />
+                </div> */}
                 <QuesAnswer />
                 <ApplyForJobs/>
             </section>

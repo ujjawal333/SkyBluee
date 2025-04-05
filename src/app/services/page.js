@@ -39,7 +39,7 @@ export default function Services() {
             <section className="relative md:py-24 py-16 overflow-hidden">
                 <ServicesComp />
 
-                <div className="container md:mt-24 md:pb-16 mt-16">
+                <div className="container md:mt- mt-8">
                     <CategoriesFaq/>
                 </div>
 
