@@ -17,8 +17,30 @@ export default function Footer() {
                         <div className="relative w-full">
                             <div className="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
                                 <div className="md:col-span-3">
-                                    <Link href="#" className="flex justify-center md:justify-start focus:outline-none">
-                                        <Image src="/images/logo-light.png" className="" alt=""  width={141} height={24}/>
+                                    <Link href="/" className="flex justify-center md:justify-start focus:outline-none">
+                                        {/* Sky Blue Logo - matching navbar design */}
+                                        <div className="flex flex-col">
+                                            <div className="relative">
+                                                <div className="flex items-center py-2">
+                                                    {/* Airplane icon */}
+                                                    <div className="absolute -top-4 left-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" className="fill-sky-400 transform rotate-45 scale-75">
+                                                            <path d="M22,16.21v-1.895L14,8V4c0-1.103-0.897-2-2-2s-2,0.897-2,2v4L2,14.315v1.895L10,13v2.5L8,17.5v1.395l4-0.875l4,0.875 V17.5l-2-2V13L22,16.21z"/>
+                                                        </svg>
+                                                    </div>
+                                                    {/* Sky Blue text with outline effect */}
+                                                    <div className="font-bold text-2xl sm:text-3xl tracking-wide ml-4">
+                                                        <span className="text-transparent bg-clip-text bg-gradient-to-b from-sky-400 to-sky-500 
+                                                                [text-shadow:_0_0_1px_#38bdf8,_0_0_1px_#38bdf8]">
+                                                            SKY BLUE
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="text-sm tracking-wider text-gray-300 font-medium ml-4 -mt-1">
+                                                H.R. Solution Pvt. Ltd
+                                            </div>
+                                        </div>
                                     </Link>
                                 </div>
 

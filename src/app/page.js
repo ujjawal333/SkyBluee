@@ -23,7 +23,7 @@ export default function Home() {
     <>
  
 
-<SupportBar />
+{/* <SupportBar /> */}
 <div/>
     <Navbar navClass="justify-start" topnavClass="bg-white dark:bg-slate-900" />
 
